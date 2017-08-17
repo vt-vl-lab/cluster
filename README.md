@@ -5,9 +5,9 @@
 Instructions for using clusters at Virginia Tech
 
 ## Table of Contents
-- [CVMLP](#cvmlp) 
-- [NewRiver](#NewRiver)
-- [Huckleberry](#huckleberry)
+- [CVMLP](##CVMLP) 
+- [NewRiver](##NewRiver)
+- [Huckleberry](##huckleberry)
 
 
 ## CVMLP
