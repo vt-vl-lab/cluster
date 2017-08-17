@@ -15,6 +15,8 @@ Instructions for using clusters at Virginia Tech
 ## NewRiver
 
 ## Huckleberry (PowerAI)
+### Administrator
+You can ask [James McClure](mcclurej@vt.edu) if you have questions. Or you can ask [Jinwoo](jinchoi@vt.edu).
 ### Access
 #### SSH
 General instructions for how to access unix systems, you can check this [link](https://secure.hosting.vt.edu/www.arc.vt.edu/accessing-unix-system/)
@@ -118,7 +120,7 @@ srun python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_
 ```
 #### Submission of multiple GPU jobs per one GPU node
 Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node. 
-James says you can use CUDA_VISIBLE_DEVICES to do this, but it has not tested yet.
+[James](mcclurej@vt.edu) says you can use `CUDA_VISIBLE_DEVICES` to do this, but it has not tested yet.
 
 
 ### Platforms
