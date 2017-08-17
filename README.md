@@ -20,8 +20,8 @@ Instructions for using clusters at Virginia Tech
 General instructions for how to access unix systems, you can check this [link](https://secure.hosting.vt.edu/www.arc.vt.edu/accessing-unix-system/)
 #### On Campus
 1. Make an account. You may ask [Jia-Bin](https://filebox.ece.vt.edu/~jbhuang/) to do this.
-2. Just ssh to the huckleberry1.arc.vt.edu with your pid
-`ssh <your_pid>@huckleberry1.arc.vt.edu`
+2. Just ssh to the `huckleberry1.arc.vt.edu` with your pid
+`ssh jinchoi@huckleberry1.arc.vt.edu`
 3. Enjoy!  
 #### Off Campus
 There are two ways to access off campus. 
@@ -153,7 +153,8 @@ $hash -r
 ```
 5. Installation is now complete and ffmpeg is now ready for use. Your newly compiled FFmpeg programs are in `~/bin`. add your `~/bin` to `.bashrc` `$PATH` variable
 5)Enjoy!
-references:
+
+References:
 [1] https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
 
 #### OpenCV
@@ -196,7 +197,8 @@ $python
 >>import cv2
 ```
 If you don't see any errors, you are good to go.
-references: 
+
+References: 
 [1] https://github.com/opencv/opencv/issues/6677     
 [2] https://github.com/opencv/opencv/pull/6982/commits/0df9cbc954c61fca0993b563c2686f9710978b08
 [3] http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
