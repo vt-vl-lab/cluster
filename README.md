@@ -26,7 +26,7 @@ General instructions for how to access unix systems, you can check this [link](h
 `ssh jinchoi@huckleberry1.arc.vt.edu`
 3. Enjoy!  
 #### Off Campus
-There are two ways to access off campus. 
+There are two ways to access off campus.
 ##### Using VPN
 1. Install Pulse (VPN client) from [here](https://vt4help.service-now.com/kb_view_customer.do?sysparm_article=KB0010740)
 2. Turn on Pulse
@@ -50,7 +50,7 @@ Host huck
 ```
 You should change User to <your_pid>. You may change the huck to whatever name you want to use.
 5. `$ ssh-keygen -t rsa`
-6. Enter a bunch - Make sure ~/ on sever has .ssh folder 
+6. Enter a bunch - Make sure ~/ on sever has .ssh folder
 login, does `$ cd ~/.ssh` work? if not, type
 ```
 $ mkdir .ssh
@@ -67,9 +67,9 @@ $ chmod 600 ~/.ssh/authorized_keys2
 `$ ssh huck`
 
 #### Remote Editing Environment
-You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins. 
-1. First setup your password-less ssh environment. Follow the instructions in 2. 
-2. On your local machine, choose a project directory to sync your source codes. 
+You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
+1. First setup your password-less ssh environment. Follow the instructions in 2.
+2. On your local machine, choose a project directory to sync your source codes.
 3. Write a `.ftpconfig` file in the chosen directory as follows.
 ```
 {
@@ -119,7 +119,7 @@ export PYTHONHOME="/home/jinchoi/pkg/miniconda2/envs/tensorflow"
 srun python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_split_0_TRAIN --cfg experiments/cfgs/c3d_rgb_detect_lr_0.001.yml --network C3D_detect_train --iters 3200000
 ```
 #### Submission of multiple GPU jobs per one GPU node
-Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node. 
+Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node.
 [James](mcclurej@vt.edu) says you can use `CUDA_VISIBLE_DEVICES` to do this, but it has not tested yet.
 
 
@@ -169,7 +169,7 @@ This approach (installation from the source not from a zip file) is to avoid an 
 `$git checkout 3.1.0 && git format-patch -1 10896129b39655e19e4e7c529153cb5c2191a1db && git am < 0001-GraphCut-deprecated-in-CUDA-7.5-and-removed-in-8.0.patch`
 4. Manually update two source files according to [this](https://github.com/opencv/opencv/pull/6982/commits/0df9cbc954c61fca0993b563c2686f9710978b08)
 This step is to avoid "_FPU_SINGLE declaration error"
-5. Go to the opencv root dir 
+5. Go to the opencv root dir
 `$cd opencv`
 6. `mkdir build`
 7. `cd build`
@@ -211,5 +211,16 @@ You can load the pre-installed TensorFlow as follows.
 2. `“source /opt/DL/tensorflow/bin/tensorflow-activate”`
 3. `Enjoy!`
 
+
+#### Pytorch
+Pytorch installation is quite simple. Clone the sources , fulfill the dependencies and there you go!
+
+1. `git clone https://github.com/pytorch/pytorch.git`
+2. `export CMAKE_PREFIX_PATH=[anaconda root directory]`
+3. `conda install numpy pyyaml setuptools cmake cffi`
+4. `python setup.py install`
+
+Done!
+
 #### Custom Caffe
-No one has been successfully installed a custom Caffe on PowerAI. There are some problems installing the dependencies such as glog, gflags, google protobuf. 
+No one has been successfully installed a custom Caffe on PowerAI. There are some problems installing the dependencies such as glog, gflags, google protobuf.
