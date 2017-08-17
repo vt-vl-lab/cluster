@@ -198,7 +198,7 @@ $python
 ```
 If you don't see any errors, you are good to go.
 
-References: 
+References:
 [1] https://github.com/opencv/opencv/issues/6677     
 [2] https://github.com/opencv/opencv/pull/6982/commits/0df9cbc954c61fca0993b563c2686f9710978b08
 [3] http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
