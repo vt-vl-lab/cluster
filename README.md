@@ -151,8 +151,8 @@ $PATH="$HOME/bin:$PATH" make
 $make install
 $hash -r
 ```
-5. Installation is now complete and ffmpeg is now ready for use. Your newly compiled FFmpeg programs are in `~/bin`. add your `~/bin` to `.bashrc` `$PATH` variable
-6 Enjoy!
+5. Installation is now complete and ffmpeg is now ready for use. Your newly compiled FFmpeg programs are in `~/bin`. add your `~/bin` to `.bashrc` `$PATH` variable.
+6. Enjoy!
 
 References:
 [1] https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
