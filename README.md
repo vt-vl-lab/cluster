@@ -134,9 +134,8 @@ conda install -c menpo ffmpeg=3.1.3
 ### Submit Jobs
 Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
 
-#### A sample PBS script using Matlab
-
-1. Write a shell script for submission of jobs on NewRiver. You may only modify "#PBS -l" section for resource request. This is a .sh file Chen uses. You can modify it appropriately.
+#### A Matlab example wiht sample PBS script
+1. Write a shell script for submission of jobs on NewRiver. This is a .sh file Chen uses. You can modify it appropriately.
 ```
 #!/bin/bash
 #
@@ -226,26 +225,25 @@ cd /home/chengao/BIrdDetection/Chen_code
 ### If run Tensorflow job ###
 #
 ```
-
-2. To submit your job to the queuing system, use the command qsub. For example, if your script is in "JobScript.qsub", the command would be:
+2. To submit your job to the queuing system, use the command `qsub`. For example, if your script is in "JobScript.qsub", the command would be:
 ```
 qsub ./JobScript.qsub
 ```
-3. This will return your job name of the form. 230077 is the job number
+3. This will return your job name of the form. xxxxxx is the job number
 ```
-230077.master.cluster
+xxxxxx.master.cluster
 ```
 4. To check a job’s status, use the checkjob command:
 ```
-checkjob -v 230077
+checkjob -v xxxxxx
 ```
 5. To check resource usage on the nodes available to a running job, use:
 ```
-jobload 230077
+jobload xxxxxx
 ```
 6. To remove a job from the queue, or stop a running job, use the command qdel
 ```
-qdel 230077
+qdel xxxxxx
 ```
 
 
