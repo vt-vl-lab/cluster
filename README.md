@@ -245,9 +245,11 @@ jobload xxxxxx
 ```
 qdel xxxxxx
 ```
+### Interactive GPU Jobs
 
-
-
+```
+interact -q p100_dev_q -lnodes=1:ppn=28:gpus=2 -A vllab_2017
+```
 
 ## Huckleberry (PowerAI)
 ### Administrator
