@@ -64,7 +64,7 @@ export PYTHONPATH=$PYTHONPATH:/srv/share/gpu_lock
 2. Check if you can run the following scripts in Python
 ```python
 import torch
-Import torchvision
+import torchvision
 A = torch.Tensor(1)
 A.cuda()
 torch.backends.cudnn.version()
