@@ -286,7 +286,9 @@ Host huck
 	User jinchoi
 ```
 You should change User to <your_pid>. You may change the huck to whatever name you want to use.
+
 5. `$ ssh-keygen -t rsa`
+
 6. Enter a bunch - Make sure ~/ on sever has .ssh folder
 login, does `$ cd ~/.ssh` work? if not, type
 ```
