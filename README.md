@@ -17,7 +17,6 @@ Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
 1. Download [Anaconda X86 installer](https://www.continuum.io/downloads), and install it. If you use python2, choose Anaconda2; Anaconda3 is for python3. (You can choose not to append the line to `.bashrc`)
 2. Download cudnn package [cuDNN v6.0 Library for Linux](https://developer.nvidia.com/cudnn), you will need to sign up an account.
 3. Set up initialization bash files (following is Yuliang's setup)
-4. (Optional) Set up PyCharm, follow the instruction [here](https://drive.google.com/file/d/0B1c7NV1MfZatd2JZQjhXOVg4MzA/view?usp=sharing)
 
 - /home/ylzou/.bashrc:
 ```bash
@@ -56,6 +55,8 @@ export PATH=$PATH:/srv/share/gpu_lock
 export PYTHONPATH=$PYTHONPATH:/srv/share/gpu_lock
 ```
 (Remember to re-connect the cluster after you setup the init scripts)
+
+4. (Optional) Set up remote editing with PyCharm, follow the instruction [here](https://drive.google.com/file/d/0B1c7NV1MfZatd2JZQjhXOVg4MzA/view?usp=sharing)
 
 **NOTE:** I use Python3.6, cuda-8.0, and cudnn-8.0-6.0. You should modify the files above according to your choice.
 
