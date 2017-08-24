@@ -252,6 +252,19 @@ qdel xxxxxx
 interact -q p100_dev_q -lnodes=1:ppn=28:gpus=2 -A vllab_2017
 ```
 
+### Switching between Huckleberry and Newriver
+
+```
+if [[ $serv_name == *"hu"* ]];
+ then
+   # Set up Huckleberry Dependencies
+   export PATH="/home/user_name/miniconda2/bin:$PATH"
+ else
+   # Set up Newriver Dependencies
+   export PATH="/home/user_name/anaconda2/bin:$PATH"
+ fi
+```
+
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
 Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
