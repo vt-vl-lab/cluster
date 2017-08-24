@@ -344,7 +344,7 @@ You can set up a remote editing environment using sftp connect. This example is 
 }
 ```
 For the “User”, “remote”, “privatekey” fields, you should modify them for your own settings. You may use VPN client if you are off-campus and want to use PowerAI. If you are off-campus and want to use CVMLP clusters, you can simply use port number 2222.
-5. Connect to the server using Packages->RemoteFTP->Connect
+5. Connect to the server using "Packages->RemoteFTP->Connect"
 6. Enjoy!
 
 #### Jupyter Notebook
