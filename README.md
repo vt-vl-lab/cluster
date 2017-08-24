@@ -266,6 +266,35 @@ if [[ $serv_name == *"hu"* ]];
  fi
 ```
 
+### TensorFlow
+WARNING: DO NOT follow the instruction from ARC. It's not working because cudnn is not visible on GPU nodes.
+0. Connect to a GPU node.
+1. Install Anaconda python of your choice.
+2. `module purge`
+3. `moudle load cuda/8.0.44`
+4. Download cudnn from [here](https://developer.nvidia.com/cudnn).
+5. Add `LD_LIBRARY_PATH` to your `.bashrc` file.
+Jinwoo's example:
+```
+# set the server name
+serv_name=$(hostname)
+
+if [[ $serv_name == *"hu"* ]];
+then
+    # for PowerAI (huckleberry)
+    # added by Miniconda2 4.3.14 installer
+    export PATH="/home/jinchoi/pkg/miniconda2/bin:$PATH"
+else
+    # for newriver
+    # added by Anaconda2 4.4.0 installer
+    export PATH="/home/jinchoi/pkg/anaconda2_nr/bin:$PATH"
+    export LD_LIBRARY_PATH=/home/jinchoi/lib/cuda/lib64:$LD_LIBRARY_PATH
+fi
+```
+6. `source ~/.bashrc` so that the os can locate your cudnn directory.
+7. Follow the official TensorFlow installation procedure provided [here](https://www.tensorflow.org/install/install_linux#InstallingAnaconda).
+8. Enjoy!
+
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
 Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
