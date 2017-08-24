@@ -255,6 +255,7 @@ interact -q p100_dev_q -lnodes=1:ppn=28:gpus=2 -A vllab_2017
 ### Switching between Huckleberry and Newriver
 
 ```
+serv_name=$(hostname)
 if [[ $serv_name == *"hu"* ]];
  then
    # Set up Huckleberry Dependencies
