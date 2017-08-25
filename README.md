@@ -295,6 +295,42 @@ fi
 7. Follow the official TensorFlow installation procedure provided [here](https://www.tensorflow.org/install/install_linux#InstallingAnaconda).
 8. Enjoy!
 
+### OpenCV
+1. Install Anaconda and make your conda environment
+2. Install from source (ver 2.4.13). Installing recent OpenCV with Deep Neural Network might be tricky. If you do not use OpenCV DNN, just installl 2.4.13 without DNN.
+```
+$git clone https://github.com/Itseez/opencv.git
+$cd opencv
+$git checkout 2.4
+```
+3. `mkdir build`
+4. `cd build`
+5. Do cmake. The following is the cmake command I used. You may want to change the PATH variables according to your miniconda installation path.
+```
+$cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=~/pkg/opencv_2.4.13_build/ \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D PYTHON_EXECUTABLE=/home/jinchoi/pkg/miniconda2/envs/tensorflow/bin/python \
+    -D PYTHON_PACKAGES_PATH=/home/jinchoi/pkg/miniconda2/envs/tensorflow/lib \
+    -D BUILD_EXAMPLES=ON ..
+```
+6. Do make
+`$make -j32`
+7. Setup your path in .bashrc file. The following is my path in .bashrc file.
+```
+export LD_LIBRARY_PATH=/home/jinchoi/pkg/opencv/build/lib/:$LD_LIBRARY_PATH
+export INCLUDE_PATH=/home/jinchoi/pkg/opencv/include:$INCLUDE_PATH
+export PYTHONPATH=/home/jinchoi/pkg/opencv/build/lib:$PYTHONPATH
+export PYTHONPATH=/home/jinchoi/pkg/opencv/include:$PYTHONPATH
+```
+8. Enjoy!
+```
+$python
+>>import cv2
+```
+If you don't see any errors, you are good to go.
+
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
 Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
