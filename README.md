@@ -271,7 +271,7 @@ WARNING: DO NOT follow the instruction from ARC. It's not working because cudnn 
 0. Connect to a GPU node.
 1. Install Anaconda python of your choice.
 2. `module purge`
-3. `moudle load cuda/8.0.44`
+3. `module load cuda/8.0.44`
 4. Download cudnn from [here](https://developer.nvidia.com/cudnn).
 5. Add `LD_LIBRARY_PATH` to your `.bashrc` file.
 Jinwoo's example:
