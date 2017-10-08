@@ -426,7 +426,14 @@ You should get an output. The Jupyter Notebook is running at: http://localhost:7
 4. Now open the browser and visit localhost:7777 and enter the token key mentioned in the link where your notebook is running
 
 ### Using GPUs
-You should submit GPU jobs only using slurm. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/slurm-user-guide/)
+You should submit GPU jobs only using slurm. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/slurm-user-guide/). 
+
+In addition to the instructions, [here](https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/) are some more useful information. 
+
+#### Debugging a slurm job ID
+`scontrol show jobid -dd <jobid>`
+It will show you what .sh file you used for the jobid. Sometimes you need this information.
+
 #### A sample slurm batch script using TF
 This is a train.sh file Jinwoo uses. You can modify it appropriately.
 ```
