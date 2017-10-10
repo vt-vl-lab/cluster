@@ -430,6 +430,9 @@ You should submit GPU jobs only using slurm. You can follow the instructions [he
 
 In addition to the instructions, [here](https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/) are some more useful information. 
 
+### Queue
+Our group memebers can use priority_q when submitting either interactive or batch jobs on PowerAI. Instead of submitting jobs to "normal_q" (crowded and limited walltime), we can submit jobs to "priory_q". In "priority_q", we will have relaxed walltime restriction and ensure at least 40% of the computation cycles of PowerAI are allocated for priority_q. 
+
 #### Debugging a slurm job ID
 `scontrol show jobid -dd <jobid>`
 It will show you what .sh file you used for the jobid. Sometimes you need this information.
@@ -438,7 +441,7 @@ It will show you what .sh file you used for the jobid. Sometimes you need this i
 This is a train.sh file Jinwoo uses. You can modify it appropriately.
 ```
 #!/bin/bash -l
-#SBATCH -p normal_q
+#SBATCH -p normal_q   # you can also use priority_q 
 #SBATCH -N 1
 #SBATCH -t 144:00:00
 #SBATCH -J c3d-full
