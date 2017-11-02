@@ -131,8 +131,13 @@ conda install -c menpo ffmpeg=3.1.3
 ```
 
 ### root access (root users only)
+#### get a su bash shell
 ```
 sudo bash
+```
+#### reboot
+```
+sudo reboot
 ```
 
 ## NewRiver
