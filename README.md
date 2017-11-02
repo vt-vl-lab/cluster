@@ -130,6 +130,10 @@ Reference:
 conda install -c menpo ffmpeg=3.1.3
 ```
 
+### root access (root users only)
+```
+sudo bash
+```
 
 ## NewRiver
 ### Submit Jobs
