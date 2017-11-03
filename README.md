@@ -139,6 +139,11 @@ sudo bash
 ```
 sudo reboot
 ```
+#### restart slurm
+```
+sudo munged
+sudo service slurm restart
+```
 
 ## NewRiver
 ### Submit Jobs
