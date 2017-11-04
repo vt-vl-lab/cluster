@@ -139,10 +139,12 @@ sudo bash
 ```
 sudo reboot
 ```
-#### restart slurm
+#### restart slurm for rebooted machine
+e.g. after fukushima reboot, you need the followings on the slurm master machine (marr). 
 ```
 sudo munged
 sudo service slurm restart
+sudo scontrol update node=fukushima state=resume
 ```
 
 ## NewRiver
