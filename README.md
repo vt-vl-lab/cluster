@@ -347,6 +347,26 @@ $python
 ```
 If you don't see any errors, you are good to go.
 
+#### Remote Editing Environment
+You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
+1. First setup your password-less ssh environment. Follow the instructions in 2.
+2. On your local machine, choose a project directory to sync your source codes.
+3. Install `Remote-ftp`. Go to Setting->Install, type RemoteFTP, Install it.
+4. Write a `.ftpconfig` file in the chosen directory as follows.
+```
+{
+    "protocol": "sftp",
+    "host": "newriver1.arc.vt.edu", // string - Hostname or IP address of the server. Default: 'localhost'
+    "port": 22, // integer - Port number of the server. Default: 22
+    "user": "jinchoi", // string - Username for authentication. Default: (none)
+    "remote": "/home/jinchoi/src/",
+    "privatekey": "/Users/jwC/.ssh/id_rsa" // string - Path to the private key file (in OpenSSH format). Default: (none)
+}
+```
+For the “User”, “remote”, “privatekey” fields, you should modify them for your own settings. You may use VPN client if you are off-campus and want to use PowerAI. If you are off-campus and want to use CVMLP clusters, you can simply use port number 2222.
+5. Connect to the server using "Packages->RemoteFTP->Connect"
+6. Enjoy!
+
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
 Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
@@ -408,7 +428,7 @@ $ chmod 600 ~/.ssh/authorized_keys2
 8. Now you can type the following to connect to PowerAI from your PC (If you are off-campus, you need to use VPN)
 `$ ssh huck`
 
-#### Remote Editing Environment
+#### Remote Editing Environment --SFTP currently not working, use NewRiver, 01/19/2018-- 
 You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
 1. First setup your password-less ssh environment. Follow the instructions in 2.
 2. On your local machine, choose a project directory to sync your source codes.
