@@ -5,10 +5,20 @@
 Instructions for using clusters at Virginia Tech
 
 ## Table of Contents
+- [Common](#common) 
 - [CVMLP](#cvmlp) 
 - [NewRiver](#newriver)
 - [Huckleberry](#huckleberry-powerai)
 
+## Common
+### Use customized python kernel in Jupyter Notebook:
+1. Install anaconda/miniconda of your choice
+2. Create an environment `conda create --name myenv`
+3. Install ipykernel `pip install ipykernel`
+4. Open the your environment `source activate myenv`
+5. Install a Python (myenv) Kernel in the environment by `python -m ipykernel install --user --name myenv --display-name "Python (myenv)"`
+5. Open Notebook, go to Kernel/Change kernel, you will see a kernel called “Python (myenv)” besides the default kernel. Select it.
+6. Done. Now you can use your anaconda python and packages.
 
 ## CVMLP
 ### Wiki
