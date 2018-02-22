@@ -20,6 +20,16 @@ Instructions for using clusters at Virginia Tech
 5. Open Notebook, go to Kernel/Change kernel, you will see a kernel called “Python (myenv)” besides the default kernel. Select it.
 6. Done. Now you can use your anaconda python and packages.
 
+### Synchronize files from CVMLP to NewRiver/Huckleberry (Manually)
+1. Create a exclude list in your directory, to specify the files/folders you don't want to synchronize (e.g. checkpoints)
+2. Do this
+```
+rsync -avz --exclude-from="project/exclude-list.txt" project/ ylzou@newriver1.arc.vt.edu:/home/ylzou/research/project
+```
+Now you synchronize all the files under `project` directory with `/home/ylzou/research/project`.
+
+**TODO**: Set up automatical synchronization
+
 ## CVMLP
 ### Wiki
 Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
