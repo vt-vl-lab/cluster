@@ -30,6 +30,9 @@ Now you synchronize all the files under `project` directory with `/home/ylzou/re
 
 **TODO**: Set up automatical synchronization
 
+### Restore deleted files in NewRiver/Huckleberry
+Check `~/.snapshot`, it keeps an hourly backup for 4 days.
+
 ## CVMLP
 ### Wiki
 Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
