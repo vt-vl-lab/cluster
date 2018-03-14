@@ -630,7 +630,7 @@ No one has been successfully installed a custom Caffe on PowerAI. There are some
 
 
 ## Amazon AWS
-The following instruction is written for VT-Vison group member specifically, who obtains access to VT-Vison AWS account. Please contact Prof. Jia-Bin Huang when you want to use this resource.
+The following instruction is written for VT-Vison group member specifically, who obtains access to VT-Vison AWS account. Please contact Prof. Jia-Bin Huang if you want to use this resource.
 
 Console login: https://194474529881.signin.aws.amazon.com/console
 
