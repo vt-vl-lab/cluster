@@ -9,7 +9,7 @@ Instructions for using clusters at Virginia Tech
 - [CVMLP](#cvmlp) 
 - [NewRiver](#newriver)
 - [Huckleberry](#huckleberry-powerai)
-- [Amazon AWS](#aws)
+- [Amazon AWS](#amazon-aws)
 
 ## Common
 ### Use customized python kernel in Jupyter Notebook:
