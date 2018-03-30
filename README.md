@@ -335,6 +335,68 @@ fi
 7. Follow the official TensorFlow installation procedure provided [here](https://www.tensorflow.org/install/install_linux#InstallingAnaconda).
 8. Enjoy!
 
+### Caffe2 and Detectron
+- This instruction requires Anaconda/Miniconda, please install it first
+- Compiling may need GPU, while GPU node cannot get access to the Internet. So please open another terminal when you need to git clone or pip install or conda install; while use the GPU node when you are building/compiling GPU related things
+1. Make a separate virtual environment for Caffe2 (Must select python2.7 for Detectron and COCO-API)
+```
+conda create -n $NAME python=2.7
+```
+**NOTE:** Everything you open a new terminal, please enter this environment.
+
+2. Build `protobuf` (credit: http://autchen.github.io/guides/2015/04/03/caffe-install.html)
+```
+git clone https://github.com/google/protobuf.git                                                                                                              
+cd protobuf/                                                     
+./autogen.sh
+./configure --prefix=/home/you/usr
+make 
+make install
+```
+
+3. Install OpenCV 3.4.1 
+```
+conda install -c conda-forge opencv
+```
+**NOTE:** You cannot use lower version!
+
+4. Clone and Build Caffe2
+```
+# Clone Caffe2's source code from our Github repository
+git clone --recursive https://github.com/caffe2/caffe2.git && cd caffe2
+git submodule update --init
+
+# Create a directory to put Caffe2's build files in
+mkdir build && cd build
+
+# Credit: https://github.com/caffe2/caffe2/issues/549
+cmake -D CUDA_TOOLKIT_ROOT_DIR=/opt/apps/cuda/8.0.61 -D CUDNN_INCLUDE_DIR=/path/to/your/cudnn/include -D CUDNN_LIBRARY=/path/to/your/cudnn/lib64/libcudnn.so ..
+```
+
+5. Modify `cmake_install.cmake`
+```
+vim cmake_install.cmake
+# Then modify line 6
+# Replace /usr/local
+# with the path to your new created environment
+# i.e. /home/ylzou/install/NewRiver/anaconda3/envs/mycaffe2
+```
+
+6. Compile, link, and install
+```
+make install
+```
+
+7. Test
+```
+python caffe2/python/operator_test/relu_op_test.py
+cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"
+```
+You can always go to the `build` to do `from caffe2.python import core` to see more detailed error or warning information. Usually you will need to install some more python packages, which can be done with `pip`.
+
+8. Install Detectron
+Follow https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md, you should be able to install it successfully.
+
 ### OpenCV
 1. Install Anaconda and make your conda environment
 2. Install from source (ver 2.4.13). Installing recent OpenCV with Deep Neural Network might be tricky. If you do not use OpenCV DNN, just installl 2.4.13 without DNN.
