@@ -342,7 +342,7 @@ fi
 ```
 conda create -n $NAME python=2.7
 ```
-**NOTE:** Everything you open a new terminal, please enter this environment.
+**NOTE:** Everytime you open a new terminal, please enter this environment.
 
 2. Build `protobuf` (credit: http://autchen.github.io/guides/2015/04/03/caffe-install.html)
 ```
@@ -352,6 +352,10 @@ cd protobuf/
 ./configure --prefix=/home/you/usr
 make 
 make install
+```
+and then add this line to your `.bashrc` file, so that the system can use your protobuf
+```
+export PATH=/home/you/usr/lib:/home/you/usr/bin:$PATH
 ```
 
 3. Install OpenCV 3.4.1 
@@ -385,6 +389,10 @@ vim cmake_install.cmake
 6. Compile, link, and install
 ```
 make install
+```
+and then add this line in your `.bashrc` file
+```
+export PYTHONPATH=/path/to/your/virtual/environment:/path/to/caffe2/build
 ```
 
 7. Test
