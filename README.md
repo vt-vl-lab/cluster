@@ -344,7 +344,7 @@ conda create -n $NAME python=2.7
 ```
 **NOTE:** Everytime you open a new terminal, please enter this environment.
 
-2. Build `protobuf` (credit: http://autchen.github.io/guides/2015/04/03/caffe-install.html)
+2. [Seems not necessary] Build `protobuf` (credit: http://autchen.github.io/guides/2015/04/03/caffe-install.html)
 ```
 git clone https://github.com/google/protobuf.git                                                                                                              
 cd protobuf/                                                     
@@ -364,12 +364,18 @@ conda install -c conda-forge opencv
 ```
 **NOTE:** You cannot use lower version!
 
-4. Clone and Build Caffe2
+4. Clone
 ```
 # Clone Caffe2's source code from our Github repository
 git clone --recursive https://github.com/caffe2/caffe2.git && cd caffe2
 git submodule update --init
+```
 
+5. Modify `CMakeList.txt` to use Caffe2 protobuf
+In `line 29`, turn on the flag `BUILD_CUSTOM_PROTOBUF`.
+
+6. Build
+```
 # Create a directory to put Caffe2's build files in
 mkdir build && cd build
 
@@ -377,7 +383,7 @@ mkdir build && cd build
 cmake -D CUDA_TOOLKIT_ROOT_DIR=/opt/apps/cuda/8.0.61 -D CUDNN_INCLUDE_DIR=/path/to/your/cudnn/include -D CUDNN_LIBRARY=/path/to/your/cudnn/lib64/libcudnn.so ..
 ```
 
-5. Modify `cmake_install.cmake`
+7. Modify `cmake_install.cmake`
 ```
 vim cmake_install.cmake
 # Then modify line 6
@@ -395,14 +401,14 @@ and then add this line in your `.bashrc` file
 export PYTHONPATH=/path/to/your/virtual/environment:/path/to/caffe2/build
 ```
 
-7. Test
+8. Test
 ```
 python caffe2/python/operator_test/relu_op_test.py
 cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"
 ```
 You can always go to the `build` to do `from caffe2.python import core` to see more detailed error or warning information. Usually you will need to install some more python packages, which can be done with `pip`.
 
-8. Install Detectron
+9. Install Detectron
 Follow https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md, you should be able to install it successfully.
 
 ### OpenCV
