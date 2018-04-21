@@ -292,6 +292,8 @@ qdel xxxxxx
 interact -q p100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_2017 -l walltime=2:00:00
 ```
 
+NOTE: You can also use `p100_normal_q` and set longer walltime.
+
 ### Switching between Huckleberry and Newriver
 
 ```
