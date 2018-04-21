@@ -289,7 +289,7 @@ qdel xxxxxx
 ### Interactive GPU Jobs
 
 ```
-interact -q p100_dev_q -lnodes=1:ppn=28:gpus=2 -A vllab_2017
+interact -q p100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_2017 -l walltime=2:00:00
 ```
 
 ### Switching between Huckleberry and Newriver
