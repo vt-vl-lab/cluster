@@ -222,7 +222,7 @@ Access to all compute engines (aside from interactive nodes) is controlled via t
 #   #PBS -l nodes=2:ppn=24:gpus=1
 #   Request 2 cores with 1 gpu each
 #   #PBS -l procs=2,gpus=1
-#PBS -l procs=12,pmem=16gb,walltime=2:20:00:00
+#PBS -l procs=1,pmem=16gb,walltime=2:20:00:00
 
 # Set Queue name
 #   normal_q        for production jobs on all Haswell nodes (nr003-nr126)
