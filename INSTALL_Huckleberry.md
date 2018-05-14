@@ -1,12 +1,13 @@
 ## Huckleberry
 
 ### Anaconda
-PowerAI architecture is ppc64le: we don’t have standard anaconda installer for this architecture. Instead, install miniconda which contains only conda and python. You can find one [here](https://repo.continuum.io/miniconda/). Download it, and install on your custom directory on PowerAI clusters. Then, you can install other modules using `conda install …` or `pip install ...` and so on.
+Update(08/24/2017): Continuum now supports the standard anaconda for ppc64le architecture. Check this out: https://www.continuum.io/downloads#linux.
+
+Then, you can install other modules using `conda install …` or `pip install ...` and so on.
 Open your `.bashrc` file.
 $ vi .bashrc
 And add the following `export PATH="/home/chengao/miniconda2/bin:$PATH"`.
 
-Update(08/24/2017): (Verified) Continuum now supports the standard anaconda for ppc64le architecture. Check this out: https://www.continuum.io/downloads#linux. Not tested yet though.
 
 ### FFmpeg
 1. Basically follow this [instruction](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu). Howerver, I didn't get the dependencies with apt-get as I don't have a sudo permission. I'm describing the setting I used and it was successful installation.
