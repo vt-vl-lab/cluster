@@ -1,4 +1,4 @@
-#### A Matlab example wiht sample PBS script
+#### A Matlab example with sample PBS script
 1. Write a shell script for submission of jobs on NewRiver. This is a .sh file Chen uses. You can modify it appropriately.
 ```
 #!/bin/bash
