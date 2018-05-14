@@ -12,6 +12,26 @@ Instructions for using clusters at Virginia Tech
 - [Amazon AWS](#amazon-aws)
 
 ## Common
+### Switch between different ARC clusters
+Note that all ARC clusters (e.g., NewRiver, Cascades, Huckleberry) share exactly **the same** file system (i.e., every file modifications you do in one cluster will affect all your clusters!). You should set up your environment in separate spaces for each cluster. And you can use the following scipts to automatically choose the correct environment when you log in.
+
+```
+serv_name=$(hostname)
+if [[ $serv_name == *"hu"* ]]; then
+    # Set up Huckleberry Dependencies
+    export PATH="/home/user_name/miniconda2/bin:$PATH"
+elif [[ $serv_name == *"nr"* ]]; then
+    # Set up Newriver Dependencies
+    export PATH="/home/user_name/anaconda2/bin:$PATH"
+else
+    # Set up Cascades Dependencies
+    # Note that Cascades and NewRiver both use CentOS, 
+    # you might sometimes use dependencies from NewRiver directly.
+    # But they have different types of GPU (P100 v.s. V100),
+    # this might cause some issues.
+fi
+```
+
 ### Use customized python kernel in Jupyter Notebook:
 1. Install anaconda/miniconda of your choice
 2. Create an environment `conda create --name myenv`
@@ -186,19 +206,6 @@ interact -q p100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_2017 -l walltime=2:00:00
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
 
-### Switching between Huckleberry and Newriver
-
-```
-serv_name=$(hostname)
-if [[ $serv_name == *"hu"* ]];
- then
-   # Set up Huckleberry Dependencies
-   export PATH="/home/user_name/miniconda2/bin:$PATH"
- else
-   # Set up Newriver Dependencies
-   export PATH="/home/user_name/anaconda2/bin:$PATH"
- fi
-```
 
 #### Remote Editing Environment
 You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
