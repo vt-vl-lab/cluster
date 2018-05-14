@@ -40,6 +40,9 @@ Check `~/.snapshot`, it keeps an hourly backup for 4 days.
 ### Wiki
 Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
 
+### Install
+Check [INSTALL_CVMLP.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_CVMLP.md)
+
 ### root access (root users only)
 #### get a su bash shell
 ```
@@ -58,6 +61,9 @@ sudo scontrol update node=fukushima state=resume
 ```
 
 ## NewRiver
+### Install
+Check [INSTALL_NewRiver.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_NewRiver.md)
+
 ### Submit Jobs
 Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
 
@@ -214,6 +220,7 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 5. Connect to the server using "Packages->RemoteFTP->Connect"
 6. Enjoy!
 
+
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
 Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
@@ -227,6 +234,9 @@ You can ask [James McClure](mcclurej@vt.edu) if you have questions. Or you can a
 ### Help Ticket
 When there is a problem, e.g. particular node down when you cancel a job by either ctrl + c or scancel command, it would probably be good to submit a help ticket from ARC website if nodes are offline for this reason and also to email. Check the box for huckleberry. This should help to ensure that multiple people see the request. 
 https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=4c7b8c4e0f712280d3254b9ce1050e3c
+
+### Install
+Check [INSTALL_Huckleberry.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_Huckleberry.md)
 
 ### Access
 #### SSH
