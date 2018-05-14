@@ -8,6 +8,7 @@ Instructions for using clusters at Virginia Tech
 - [Common](#common) 
 - [CVMLP](#cvmlp) 
 - [NewRiver](#newriver)
+- [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
 - [Amazon AWS](#amazon-aws)
 
@@ -81,123 +82,14 @@ sudo scontrol update node=fukushima state=resume
 ```
 
 ## NewRiver
+### Job Submission
+Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
+
+Example: [CPU (Matlab) job submission using PBS](https://github.com/vt-vl-lab/cluster/blob/master/examples/PBS_Matlab_NewRiver.md)
+
 ### Install
 Check [INSTALL_NewRiver.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_NewRiver.md)
 
-### Submit Jobs
-Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
-
-#### A Matlab example wiht sample PBS script
-1. Write a shell script for submission of jobs on NewRiver. This is a .sh file Chen uses. You can modify it appropriately.
-```
-#!/bin/bash
-#
-# Annotated example for submission of jobs on NewRiver
-#
-# Syntax
-# '#' denotes a comment
-# '#PBS' denotes a PBS directive that is applied during execution
-#
-# More info
-# https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples
-#
-# Chen Gao
-# Aug 16, 2017
-#
-
-# Account under which to run the job
-#PBS -A vllab_2017
-
-# Access group. Do not change this line.
-#PBS -W group_list=newriver
-
-# Set some system parameters (Resource Request)
-#
-# NewRiver has the following hardware:
-#   a. 100 24-core, 128 GB Intel Haswell nodes
-#   b.  16 24-core, 512 GB Intel Haswell nodes
-#   c.   8 24-core, 512 GB Intel Haswell nodes with 1 Nvidia K80 GPU
-#   d.   2 60-core,   3 TB Intel Ivy Bridge nodes
-#   e.  39 28-core, 512 GB Intel Broadwell nodes with 2 Nvidia P100 GPU
-#
-# Resources can be requested by specifying the number of nodes, cores, memory, GPUs, etc
-# Examples:
-#   Request 2 nodes with 24 cores each
-#   #PBS -l nodes=1:ppn=24
-#   Request 4 cores (on any number of nodes)
-#   #PBS -l procs=4
-#   Request 12 cores with 20gb memory per core
-# 	#PBS -l procs=12,pmem=20gb
-#   Request 2 nodes with 24 cores each and 20gb memory per core (will give two 512gb nodes)
-#   #PBS -l nodes=2:ppn=24,pmem=20gb
-#   Request 2 nodes with 24 cores per node and 1 gpu per node
-#   #PBS -l nodes=2:ppn=24:gpus=1
-#   Request 2 cores with 1 gpu each
-#   #PBS -l procs=2,gpus=1
-#PBS -l procs=1,pmem=16gb,walltime=2:20:00:00
-
-# Set Queue name
-#   normal_q        for production jobs on all Haswell nodes (nr003-nr126)
-#   largemem_q      for jobs on the two 3TB, 60-core Ivy Bridge servers (nr001-nr002)
-#   dev_q           for development/debugging jobs on Haswell nodes. These jobs must be short but can be large.
-#   vis_q           for visualization jobs on K80 GPU nodes (nr019-nr027). These jobs must be both short and small.
-#   open_q          for jobs not requiring an allocation. These jobs must be both short and small.
-#   p100_normal_q   for production jobs on P100 GPU nodes
-#   p100_dev_q      for development/debugging jobs on P100 GPU nodes. These jobs must be short but can be large.
-# For more on queues as policies, see http://www.arc.vt.edu/newriver#policy
-#PBS -q normal_q
-
-# Send emails to -M when
-# a : a job aborts
-# b : a job begins
-# e : a job ends
-#PBS -M <PID>@vt.edu
-#PBS -m bea
-
-# Add any modules you might require. This example adds matlab module.
-# Use 'module avail' command to see a list of available modules.
-#
-module load matlab
-
-# Navigate to the directory from which this script was executed
-cd /home/chengao/BIrdDetection/Chen_code
-
-# Below here enter the commands to start your job. A few examples are provided below.
-# Some useful variables set by the job:
-#  $PBS_O_WORKDIR    Directory from which the job was submitted
-#  $PBS_NODEFILE     File containing list of cores available to the job
-#  $PBS_GPUFILE      File containing list of GPUs available to the job
-#  $PBS_JOBID        Job ID (e.g., 107619.master.cluster)
-#  $PBS_NP           Number of cores allocated to the job
-
-### If run Matlab job ###
-#
-# Open a MATLAB instance and call Rich_new()
-#matlab -nodisplay -r "addpath('Chen_code'); Rich_new;exit"
-
-### If run Tensorflow job ###
-#
-```
-2. To submit your job to the queuing system, use the command `qsub`. For example, if your script is in "JobScript.qsub", the command would be:
-```
-qsub ./JobScript.qsub
-```
-3. This will return your job name of the form. xxxxxx is the job number
-```
-xxxxxx.master.cluster
-```
-4. To check a job’s status, use the checkjob command:
-```
-checkjob -v xxxxxx
-```
-5. To check resource usage on the nodes available to a running job, use:
-```
-jobload xxxxxx
-```
-6. To remove a job from the queue, or stop a running job, use the command qdel
-```
-qdel xxxxxx
-```
 ### Interactive GPU Jobs
 
 ```
@@ -228,6 +120,16 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 6. Enjoy!
 
 
+## Cascades
+You can basically follow the instructions for [NewRiver](#newriver).
+
+### Interactive GPU Jobs
+
+```
+interact -q v100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_01 -l walltime=2:00:00
+```
+
+
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
 Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
@@ -236,14 +138,17 @@ So when you have 4 different models to train, please DO NOT `sbatch model1.sh`, 
 Please do `sbatch model1.sh`, ssh to the node your model1 is assigned, then run your three other models in a background of that node using nohup, screen, or whatever your choice.
 As far as we know, this is the best way to submit multiple jobs on a single GPU node. If you have more elegant way to submit 4 different jobs on a single GPU node, please let us know.
 
+
+### Install
+Check [INSTALL_Huckleberry.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_Huckleberry.md)
+
+
 ### Administrator
 You can ask [James McClure](mcclurej@vt.edu) if you have questions. Or you can ask [Jinwoo](jinchoi@vt.edu).
 ### Help Ticket
 When there is a problem, e.g. particular node down when you cancel a job by either ctrl + c or scancel command, it would probably be good to submit a help ticket from ARC website if nodes are offline for this reason and also to email. Check the box for huckleberry. This should help to ensure that multiple people see the request. 
 https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=4c7b8c4e0f712280d3254b9ce1050e3c
 
-### Install
-Check [INSTALL_Huckleberry.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_Huckleberry.md)
 
 ### Access
 #### SSH
