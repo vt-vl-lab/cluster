@@ -3,7 +3,7 @@ The Caffe2 repository has been merged to the Pytorch repository, the installatio
 Addtionally, you can install Non-local Neural Network, built on top of the Caffe2 by following this instruction.
 The installation instruction of Caffe2 and Non-Local Neural Network is based on [this](https://github.com/facebookresearch/video-nonlocal-net/blob/master/INSTALL.md).
 
-# [Caffe2 installation](#caffe2)
+# Caffe2 installation
 1) create a new virtual env using conda
 `jinchoi@nrlogin1:~$ conda create -n cf2_ffmp python=2.7`
 
