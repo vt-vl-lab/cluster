@@ -6,13 +6,13 @@ The installation instruction of Caffe2 and Non-Local Neural Network is based on 
 # Caffe2 installation
 Note that if you miss a single dependency installation, you might not build the Caffe2 successfully. Please follow this instruction closely and make sure you install every single dependency before building the Caffe2.
 
-1) create a new virtual env using conda
+1) Create a new virtual env using conda
 `jinchoi@nrlogin1:~$ conda create -n cf2_ffmp python=2.7`
 
-2) activate the virtual env
+2) Activate the virtual env
 `jinchoi@nrlogin1:~$ source activate cf2_ffmp`
 
-3) install dependencies
+3) Install dependencies
 ```(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes cmake && \
  conda install --yes git && \
  conda install --yes glog && \
@@ -20,16 +20,16 @@ Note that if you miss a single dependency installation, you might not build the 
  conda install --yes gcc
 ```
 
-4) install other dependencies
+4) Install other dependencies
 `(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes networkx && conda install --yes cython && conda install --yes libpng && conda install --yes protobuf && conda install --yes flask && conda install --yes future`
 
-5) install graphviz
+5) Install graphviz
 `(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes graphviz`
 
-6) install hypothesis
+6) Install hypothesis
 `(cf2_ffmp) jinchoi@nrlogin1:~$ pip install hypothesis`
 
-7) install other dependencies
+7) Install other dependencies
 ```(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes pydot && > conda install --yes lmdb && \
  conda install --yes pyyaml  && \
  conda install --yes matplotlib  && \
@@ -40,25 +40,25 @@ Note that if you miss a single dependency installation, you might not build the 
  conda install --yes tornado
 ```
 
-8) install opencv 3.4.1
+8) Install opencv 3.4.1
 `(cf2_ffmp) jinchoi@nrlogin1:~$ conda install -c conda-forge opencv`
 
-9) install setup tools 38.1.0
+9) Install setup tools 38.1.0
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ pip install setuptools==38.1.0`
 
-10) install typing
+10) Install typing
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install typing`
 
-11) install bzip2 using conda-forge
+11) Install bzip2 using conda-forge
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$  conda install -c conda-forge bzip2`
 
-13) upgrade make version to 3.12.2
+13) Upgrade cmake version to 3.12.2
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge cmake`
 
-14) reinstall opencv to 3.4.1 as previous steps have downgraded the opencv to 2.4.x
+14) Reinstall opencv to 3.4.1 as previous steps have downgraded the opencv to 2.4.x
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge opencv`
 
-15) build should work!!! 
+15) Building Caffe2 should work!!! 
 1. `git clone https://github.com/pytorch/pytorch.git && cd pytorch`
 2. `git submodule update --init --recursive`
 3. Log in to a gpu node
@@ -68,7 +68,7 @@ Note that if you miss a single dependency installation, you might not build the 
 ```
 option(USE_FFMPEG "Use ffmpeg" ON)
 ```
-6. build
+6. Build it
     1. `USE_FFMPEG=1 FULL_CAFFE2=1 python setup.py install` 
 
 16) Test your installation
