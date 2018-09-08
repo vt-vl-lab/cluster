@@ -32,6 +32,8 @@ fi
 ### Caffe2 and Detectron
 - This instruction requires Anaconda/Miniconda, please install it first
 - Compiling may need GPU, while GPU node cannot get access to the Internet. So please open another terminal when you need to git clone or pip install or conda install; while use the GPU node when you are building/compiling GPU related things
+- The [Caffe2](https://github.com/pytorch/pytorch) has been merged to the [Pytorch](https://github.com/pytorch/pytorch), the installation instruction with the [old Caffe2](https://github.com/caffe2/caffe2) repository does not work anymore. Here is the installation instruction of the new Caffe2 without any sudo access: [New Caffe2 installation instruction](https://github.com/vt-vl-lab/cluster/blob/master/install_Caffe2_NewRiver.md)
+
 1. Make a separate virtual environment for Caffe2 (Must select python2.7 for Detectron and COCO-API)
 ```
 conda create -n $NAME python=2.7
