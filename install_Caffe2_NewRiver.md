@@ -59,6 +59,7 @@ Note that if you miss a single dependency installation, you might not build the 
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge opencv`
 
 15) Add paths
+```
 export CUDA_HOME="/usr/local/cuda-8.0"
 export CUDNN_LIB_DIR="<path_to_your_cudnn_dir>"
 export CUDNN_INCLUDE_DIR="<path_to_your_cudnn_dir>/include"
@@ -69,6 +70,7 @@ export CPLUS_INCLUDE_PATH=/home/USERNAME/anaconda2/envs/caffe2/include:/usr/loca
 export LD_LIBRARY_PATH=/home/USERNAME/anaconda2/envs/caffe2/lib:/usr/lib64:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/lib:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/home/USERNAME/anaconda2/envs/caffe2/lib:/usr/lib64:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/lib:$LIBRARY_PATH
 conda activate caffe2
+```
 
 16) Building Caffe2 should work!!! 
 1. `git clone https://github.com/pytorch/pytorch.git && cd pytorch`
