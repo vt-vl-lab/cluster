@@ -74,8 +74,9 @@ option(USE_FFMPEG "Use ffmpeg" ON)
 2. `python caffe2/python/operator_test/activation_ops_test.py`
 
 
-# Non-local NN installation
-1. Before build, replace video ops of the original Caffe2 with the Non-local NN video ops
+# Non-local Neural Network installation
+1. Clone Non-local Neural Network `git clone --recursive https://github.com/facebookresearch/video-nonlocal-net.git`
+2. Before build, replace video ops of the original Caffe2 with the Non-local NN video ops
     1. `rm -rf pytorch/caffe2/video`
     2. `cp -r video-nonlocal-net/caffe2_customized_ops/video pytorch/caffe2/`
-2. Build the Caffe2 following the [Caffe2 installation instruction](#Caffe2-installation).
+3. Build the Caffe2 following the [Caffe2 installation instruction](#caffe2-installation).
