@@ -69,7 +69,7 @@ Note that if you miss a single dependency installation, you might not build the 
 option(USE_FFMPEG "Use ffmpeg" ON)
 ```
 6. Build it
-    1. `USE_FFMPEG=1 FULL_CAFFE2=1 python setup.py install` 
+`USE_FFMPEG=1 FULL_CAFFE2=1 python setup.py install` 
 
 16) Test your installation
 1. `cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"`
