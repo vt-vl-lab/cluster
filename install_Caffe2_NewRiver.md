@@ -4,6 +4,8 @@ Addtionally, you can install [Non-local Neural Network](https://github.com/faceb
 The installation instruction of Caffe2 and Non-Local Neural Network is based on [this](https://github.com/facebookresearch/video-nonlocal-net/blob/master/INSTALL.md).
 
 # Caffe2 installation
+Note that if you miss a single dependency installation, you might not build the Caffe2 successfully. Please follow this instruction closely and make sure you install every single dependency before building the Caffe2.
+
 1) create a new virtual env using conda
 `jinchoi@nrlogin1:~$ conda create -n cf2_ffmp python=2.7`
 
