@@ -1,8 +1,9 @@
-The Caffe2 repository has been merged to the Pytorch repository, the installation instruction with the old Caffe2 repository does not work anymore. 
-Here is the installation instruction of the new Caffe2 without any sudo access. Optionally, you can install Non-local Neural Network, built on top of the Caffe2 by following this instruction.
+The Caffe2 repository has been merged to the Pytorch repository, the installation instruction with the old Caffe2 repository does not work anymore. Here is the installation instruction of the new Caffe2 without any sudo access. 
+
+Addtionally, you can install Non-local Neural Network, built on top of the Caffe2 by following this instruction.
 The installation instruction of Caffe2 and Non-Local Neural Network is based on [this](https://github.com/facebookresearch/video-nonlocal-net/blob/master/INSTALL.md).
 
-# Caffe2 installation
+# [Caffe2 installation](#caffe2)
 1) create a new virtual env using conda
 `jinchoi@nrlogin1:~$ conda create -n cf2_ffmp python=2.7`
 
@@ -68,13 +69,13 @@ option(USE_FFMPEG "Use ffmpeg" ON)
 6. build
     1. `USE_FFMPEG=1 FULL_CAFFE2=1 python setup.py install` 
 
-16) test your installation
+16) Test your installation
 1. `cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"`
 2. `python caffe2/python/operator_test/activation_ops_test.py`
 
 
-#Non-local NN installation
+# Non-local NN installation
 1. Before build, replace video ops of the original Caffe2 with the Non-local NN video ops
     1. `rm -rf pytorch/caffe2/video`
     2. `cp -r video-nonlocal-net/caffe2_customized_ops/video pytorch/caffe2/`
-2. Build the Caffe2 by doing the same thing as Caffe2 installation
+2. Build the Caffe2 following the [Caffe2 installation instruction](#Caffe2-installation).
