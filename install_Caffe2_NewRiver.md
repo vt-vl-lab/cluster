@@ -46,8 +46,11 @@ Note that if you miss a single dependency installation, you might not build the 
 9) Install setup tools 38.1.0
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ pip install setuptools==38.1.0`
 
-10) Install typing
-`(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install typing`
+10) Install typing and packaging
+```
+(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install --yes typing && \
+conda install --yes packaging 
+```
 
 11) Install bzip2 using conda-forge
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$  conda install -c conda-forge bzip2`
@@ -58,7 +61,16 @@ Note that if you miss a single dependency installation, you might not build the 
 14) Reinstall opencv to 3.4.1 as previous steps have downgraded the opencv to 2.4.x
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge opencv`
 
-15) Add paths
+15) Make sure your gcc is 4.8.5 and libgcc is 5.2.0, cmake is 3.12.2, opencv is 3.4.1
+If not, do the followings.
+```
+conda install gcc=4.8.5
+conda install libgcc=5.2.0
+conda install -c conda-forge cmake
+conda install -c conda-forge opencv
+```
+
+16) Add paths
 ```
 export CUDA_HOME="/usr/local/cuda-8.0"
 export CUDNN_LIB_DIR="<path_to_your_cudnn_dir>"
@@ -72,7 +84,7 @@ export LIBRARY_PATH=/home/USERNAME/anaconda2/envs/caffe2/lib:/usr/lib64:/usr/loc
 conda activate caffe2
 ```
 
-16) Building Caffe2 should work!!! 
+17) Building Caffe2 should work!!! 
 1. `git clone https://github.com/pytorch/pytorch.git && cd pytorch`
 2. `git submodule update --init --recursive`
 3. Log in to a gpu node
@@ -85,7 +97,7 @@ option(USE_FFMPEG "Use ffmpeg" ON)
 6. Build it
 `USE_FFMPEG=1 FULL_CAFFE2=1 python setup.py install` 
 
-17) Test your installation
+18) Test your installation
 1. `cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"`
 2. `python caffe2/python/operator_test/activation_ops_test.py`
 
