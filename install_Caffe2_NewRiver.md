@@ -62,7 +62,11 @@ conda install --yes packaging
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge opencv`
 
 15) Make sure your gcc is 4.8.5 and libgcc is 5.2.0, cmake is 3.12.2, opencv is 3.4.1
-If not, do the followings.
+If you don't have these versions, you may face the following errors when you run `cmake` or when you run `import cv2` in your python code:
+`libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by cmake)`
+`libstdc++.so.6: version `CXXABI_1.3.9' not found (required by cmake)`
+
+So, if you don't have these versions, do the followings so that you have the appropriate versions of gcc, libgcc, cmake and OpenCV.
 ```
 conda install gcc=4.8.5
 conda install libgcc=5.2.0
