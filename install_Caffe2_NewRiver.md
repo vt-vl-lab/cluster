@@ -110,11 +110,11 @@ option(USE_FFMPEG "Use ffmpeg" ON)
 # Non-local Neural Network installation
 It does not work right now...
 
-1. Clone Non-local Neural Network `git clone --recursive https://github.com/facebookresearch/video-nonlocal-net.git`
-2. Before build, replace video ops of the original Caffe2 with the Non-local NN video ops
-    1. `rm -rf pytorch/caffe2/video`
-    2. `cp -r video-nonlocal-net/caffe2_customized_ops/video pytorch/caffe2/`
-3. Build the Caffe2 following the [Caffe2 installation instruction](#caffe2-installation)
+~1. Clone Non-local Neural Network `git clone --recursive https://github.com/facebookresearch/video-nonlocal-net.git`~
+~2. Before build, replace video ops of the original Caffe2 with the Non-local NN video ops~
+    ~1. `rm -rf pytorch/caffe2/video`~
+    ~2. `cp -r video-nonlocal-net/caffe2_customized_ops/video pytorch/caffe2/`~
+~3. Build the Caffe2 following the [Caffe2 installation instruction](#caffe2-installation)~
 
 # FYI: Jinwoo's Conda Virtual Environment
 
