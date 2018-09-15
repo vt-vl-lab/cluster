@@ -7,14 +7,14 @@ The installation instruction of Caffe2 and Non-Local Neural Network is based on 
 Note that if you miss a single dependency installation, you might not build the Caffe2 successfully. Please follow this instruction closely and make sure you install every single dependency before building the Caffe2.
 
 1) Create a new virtual env using conda
-`jinchoi@nrlogin1:~$ conda create -n cf2_ffmp python=2.7`
+`conda create -n cf2_ffmp python=2.7`
 
 2) Activate the virtual env
-`jinchoi@nrlogin1:~$ source activate cf2_ffmp`
+`source activate cf2_ffmp`
 
 3) Install dependencies
 ```
-(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes cmake && \
+ conda install --yes cmake && \
  conda install --yes git && \
  conda install --yes glog && \
  conda install --yes gflags && \
@@ -29,11 +29,11 @@ Note that if you miss a single dependency installation, you might not build the 
 ```
 
 4) Install hypothesis
-`(cf2_ffmp) jinchoi@nrlogin1:~$ pip install hypothesis`
+`pip install hypothesis`
 
 5) Install other dependencies
 ```
-(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes pydot && \
+ conda install --yes pydot && \
  conda install --yes lmdb && \
  conda install --yes pyyaml  && \
  conda install --yes matplotlib  && \
@@ -45,25 +45,25 @@ Note that if you miss a single dependency installation, you might not build the 
 ```
 
 6) Install opencv 3.4.1
-`(cf2_ffmp) jinchoi@nrlogin1:~$ conda install -c conda-forge opencv`
+`conda install -c conda-forge opencv`
 
 7) Install setup tools 38.1.0
-`(cf2_ffmp) jinchoi@nrlogin1:~/src$ pip install setuptools==38.1.0`
+`pip install setuptools==38.1.0`
 
 8) Install typing and packaging
 ```
-(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install --yes typing && \
+conda install --yes typing && \
 conda install --yes packaging 
 ```
 
 9) Install bzip2 using conda-forge
-`(cf2_ffmp) jinchoi@nrlogin1:~/src$  conda install -c conda-forge bzip2`
+`conda install -c conda-forge bzip2`
 
 10) Upgrade cmake version to 3.12.2
-`(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge cmake`
+`conda install -c conda-forge cmake`
 
 11) Reinstall opencv to 3.4.1 as previous steps have downgraded the opencv to 2.4.x
-`(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge opencv`
+`conda install -c conda-forge opencv`
 
 12) Make sure your gcc is 4.8.5 and libgcc is 5.2.0, cmake is 3.12.2, opencv is 3.4.1
 If you don't have these versions, you may face the following errors when you run `cmake` or when you run `import cv2` in your python code:
