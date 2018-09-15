@@ -25,7 +25,7 @@ Note that if you miss a single dependency installation, you might not build the 
  conda install --yes protobuf && \
  conda install --yes flask && \
  conda install --yes future && \
- conda install --yes graphviz`
+ conda install --yes graphviz
 ```
 
 4) Install hypothesis
