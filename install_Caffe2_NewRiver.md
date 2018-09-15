@@ -13,7 +13,8 @@ Note that if you miss a single dependency installation, you might not build the 
 `jinchoi@nrlogin1:~$ source activate cf2_ffmp`
 
 3) Install dependencies
-```(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes cmake && \
+```
+(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes cmake && \
  conda install --yes git && \
  conda install --yes glog && \
  conda install --yes gflags && \
@@ -31,7 +32,8 @@ Note that if you miss a single dependency installation, you might not build the 
 `(cf2_ffmp) jinchoi@nrlogin1:~$ pip install hypothesis`
 
 5) Install other dependencies
-```(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes pydot && \
+```
+(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes pydot && \
  conda install --yes lmdb && \
  conda install --yes pyyaml  && \
  conda install --yes matplotlib  && \
