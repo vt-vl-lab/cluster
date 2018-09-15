@@ -17,20 +17,22 @@ Note that if you miss a single dependency installation, you might not build the 
  conda install --yes git && \
  conda install --yes glog && \
  conda install --yes gflags && \
- conda install --yes gcc
+ conda install --yes gcc && \
+ conda install --yes networkx && \
+ conda install --yes cython && \
+ conda install --yes libpng && \
+ conda install --yes protobuf && \
+ conda install --yes flask && \
+ conda install --yes future && \
+ conda install --yes graphviz`
 ```
 
-4) Install other dependencies
-`(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes networkx && conda install --yes cython && conda install --yes libpng && conda install --yes protobuf && conda install --yes flask && conda install --yes future`
-
-5) Install graphviz
-`(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes graphviz`
-
-6) Install hypothesis
+4) Install hypothesis
 `(cf2_ffmp) jinchoi@nrlogin1:~$ pip install hypothesis`
 
-7) Install other dependencies
-```(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes pydot && > conda install --yes lmdb && \
+5) Install other dependencies
+```(cf2_ffmp) jinchoi@nrlogin1:~$ conda install --yes pydot && \
+ conda install --yes lmdb && \
  conda install --yes pyyaml  && \
  conda install --yes matplotlib  && \
  conda install --yes requests  && \
@@ -40,28 +42,28 @@ Note that if you miss a single dependency installation, you might not build the 
  conda install --yes tornado
 ```
 
-8) Install opencv 3.4.1
+6) Install opencv 3.4.1
 `(cf2_ffmp) jinchoi@nrlogin1:~$ conda install -c conda-forge opencv`
 
-9) Install setup tools 38.1.0
+7) Install setup tools 38.1.0
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ pip install setuptools==38.1.0`
 
-10) Install typing and packaging
+8) Install typing and packaging
 ```
 (cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install --yes typing && \
 conda install --yes packaging 
 ```
 
-11) Install bzip2 using conda-forge
+9) Install bzip2 using conda-forge
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$  conda install -c conda-forge bzip2`
 
-13) Upgrade cmake version to 3.12.2
+10) Upgrade cmake version to 3.12.2
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge cmake`
 
-14) Reinstall opencv to 3.4.1 as previous steps have downgraded the opencv to 2.4.x
+11) Reinstall opencv to 3.4.1 as previous steps have downgraded the opencv to 2.4.x
 `(cf2_ffmp) jinchoi@nrlogin1:~/src$ conda install -c conda-forge opencv`
 
-15) Make sure your gcc is 4.8.5 and libgcc is 5.2.0, cmake is 3.12.2, opencv is 3.4.1
+12) Make sure your gcc is 4.8.5 and libgcc is 5.2.0, cmake is 3.12.2, opencv is 3.4.1
 If you don't have these versions, you may face the following errors when you run `cmake` or when you run `import cv2` in your python code:
 ```
 libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by cmake)
@@ -76,7 +78,7 @@ conda install -c conda-forge cmake
 conda install -c conda-forge opencv
 ```
 
-16) Add paths
+13) Add paths
 ```
 export CUDA_HOME="/usr/local/cuda-8.0"
 export CUDNN_LIB_DIR="<path_to_your_cudnn_dir>"
@@ -90,7 +92,7 @@ export LIBRARY_PATH=/home/USERNAME/anaconda2/envs/caffe2/lib:/usr/lib64:/usr/loc
 conda activate caffe2
 ```
 
-17) Building Caffe2 should work!!! 
+14) Building Caffe2 should work!!! 
 1. `git clone https://github.com/pytorch/pytorch.git && cd pytorch`
 2. `git submodule update --init --recursive`
 3. Log in to a gpu node
@@ -103,7 +105,7 @@ option(USE_FFMPEG "Use ffmpeg" ON)
 6. Build it
 `USE_FFMPEG=1 FULL_CAFFE2=1 python setup.py install` 
 
-18) Test your installation
+15) Test your installation
 1. `cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"`
 2. `python caffe2/python/operator_test/activation_ops_test.py`
 
