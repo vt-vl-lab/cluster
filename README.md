@@ -60,6 +60,23 @@ Check `~/.snapshot`, it keeps an hourly backup for 4 days.
 
 ### Wiki
 Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
+Cannot log into this anymore.
+
+### Computing Resources
+1. GPU machines
+Fukushima(up): k80 x 16, 32 Cores Intel, 396GB Ram
+Werbos(up): k80 x 16, 32 Cores Intel, 396GB Ram
+Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
+Hebb(down): Titan Black x 7 
+Rosenblatt(down): Titan Black x 3 (?) 
+
+2. CPU-only machines
+marr(slurm server node):  
+vapnik: 64 Cores Intel, 528GB Ram
+minsky: 64 Cores Intel, 528GB Ram
+mccarthy: 64 Cores Intel, 528GB Ram
+turing(down): 64 Cores Intel, 528GB Ram
+godel: 64 Cores Intel, 264GB Ram
 
 ### Install
 Check [INSTALL_CVMLP.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_CVMLP.md)
