@@ -115,6 +115,14 @@ interact -q p100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_01 -l walltime=2:00:00
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
 
+### Important Commands
+```
+# Show CPU resources usage
+showq
+
+# See how many empty (GPU) nodes
+qstat -Q p100_normal_q
+```
 
 #### Remote Editing Environment
 You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
