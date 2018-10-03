@@ -1,7 +1,6 @@
 ## NewRiver
 
 ### TensorFlow
-WARNING: DO NOT follow the instruction from ARC. It's not working because cudnn is not visible on GPU nodes.
 0. Connect to a GPU node.
 1. Install Anaconda python of your choice.
 2. `module purge`
@@ -28,6 +27,50 @@ fi
 6. `source ~/.bashrc` so that the os can locate your cudnn directory.
 7. Follow the official TensorFlow installation procedure provided [here](https://www.tensorflow.org/install/install_linux#InstallingAnaconda).
 8. Enjoy!
+
+#### Install Custom TensorFlow
+0. (Optional) Create a virtual environment, assume that you have installed Anaconda/Miniconda
+```
+# Create the environment
+conda create python=$VERSION -n $NAME
+
+# Enter the environment
+source activate $NAME
+```
+replace `$VERSION` with `2.7` or `3.6`, and set a `$NAME` for your environment
+
+1. Add the following lines to your `~/.bashrc` file to load CUDA and CUDNN
+```
+#TF version >= 1.5.0
+NVCC=/opt/apps/cuda/9.0.176/bin
+export LD_LIBRARY_PATH=/opt/apps/cuda/9.0.176/lib64:$LD_LIBRARY_PATH
+CUDA_PATH=/opt/apps/cudnn/7.1
+export LD_LIBRARY_PATH=/opt/apps/cudnn/7.1/lib64:$LD_LIBRARY_PATH
+
+## If you want to use older version, you can use the CUDA 8.0
+#NVCC=/opt/apps/cuda/8.0.61/bin
+#export LD_LIBRARY_PATH=/opt/apps/cuda/8.0.61/lib64:$LD_LIBRARY_PATH
+## I am not sure if this cudnn corresponds to CUDA 8.0. If not, you can download it and set the path
+#CUDA_PATH=/opt/apps/cudnn/6.0
+#export LD_LIBRARY_PATH=/opt/apps/cudnn/6.0/lib64:$LD_LIBRARY_PATH
+```
+
+2. Install TensorFlow in the login (CPU) node
+```
+pip install tensorflow-gpu
+```
+if you want other version than 1.11.0, just specify the version
+
+3. Sanity check
+```
+# Log in to the GPU node via interactive mode
+interact -q p100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_01 -l walltime=2:00:00
+
+source ~/.bashrc
+
+python
+import tensorflow as tf
+```
 
 ### Caffe2 and Detectron
 - This instruction requires Anaconda/Miniconda, please install it first
