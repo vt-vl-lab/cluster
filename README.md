@@ -185,7 +185,7 @@ Our group memebers can use priority_q when submitting either interactive or batc
 
 #### Interactive GPU job
 ```
-salloc -N1 --mem-per-cpu=8G -p priority_q -t 120:00 --gres=gpu:pascal:1
+salloc -n1 --mem-per-cpu=8G -p priority_q -t 120:00 --gres=gpu:pascal:1
 srun --pty /bin/bash
 ```
 **NOTE:** When you want to exit the interactive mode, you need to do `ctrl+D` twice. 
