@@ -199,9 +199,9 @@ This is a train.sh file Jinwoo uses. You can modify it appropriately.
 ```
 #!/bin/bash -l
 #SBATCH -p normal_q   # you can also use priority_q 
-#SBATCH -N 1
-#SBATCH -t 144:00:00
-#SBATCH -J c3d-full
+#SBATCH -n 1 # number of tasks to run
+#SBATCH -t 144:00:00 # walltime
+#SBATCH -J c3d-full # job name
 #SBATCH -o ./log/C3D-RGB-Full_Training_UCF101_lr_0.001_batch_256_320k_full_img_size.log
 
 hostname
