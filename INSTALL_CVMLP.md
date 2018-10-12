@@ -53,7 +53,7 @@ export PYTHONPATH=$PYTHONPATH:/srv/share/gpu_lock
 ```python
 import torch
 import torchvision
-A = torch.Tensor(1)
+A = torch.LongTensor(1)
 A.cuda()
 torch.backends.cudnn.version()
 ```
