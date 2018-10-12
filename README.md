@@ -64,10 +64,10 @@ Cannot log into this anymore.
 
 ### Computing Resources
 1. GPU machines
-- Fukushima(up): k80 x 16, 32 Cores Intel, 396GB Ram
-- Werbos(up): k80 x 16, 32 Cores Intel, 396GB Ram
+- Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16, 32 Cores Intel, 396GB Ram
+- Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16, 32 Cores Intel, 396GB Ram
+- Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
-- Hebb(down): Titan Black x 7 
 - Rosenblatt(down): Titan Black x 3 (?) 
 
 2. CPU-only machines
