@@ -97,7 +97,7 @@ Pytorch installation is quite simple. Clone the sources , fulfill the dependenci
 1. `git clone https://github.com/pytorch/pytorch.git`
 2. `export CMAKE_PREFIX_PATH=[anaconda root directory]`
 3. `conda install numpy pyyaml setuptools cmake cffi`
-4. `python setup.py install`
+4. `NO_CAFFE2_OPS=1 python setup.py install`
 
 Done!
 
