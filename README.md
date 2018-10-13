@@ -122,6 +122,12 @@ showq
 
 # See how many empty (GPU) nodes
 qstat -Q p100_normal_q
+
+# Check job status
+checkjob -v $jobid
+
+# Check resource usage
+jobload $jobid
 ```
 
 #### Remote Editing Environment
