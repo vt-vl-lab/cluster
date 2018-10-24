@@ -67,6 +67,7 @@ Cannot log into this anymore.
 - Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
+- Shenandoah(up, cuda: 8.0, 9.2): Titan Xp x 4
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
 
