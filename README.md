@@ -111,7 +111,7 @@ Check [INSTALL_NewRiver.md](https://github.com/vt-vl-lab/cluster/blob/master/INS
 ### Interactive GPU Jobs
 
 ```
-interact -q p100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_02 -l walltime=2:00:00
+interact -q p100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_02 -l walltime=2:00:00
 ```
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
@@ -158,7 +158,7 @@ You can basically follow the instructions for [NewRiver](#newriver).
 ### Interactive GPU Jobs
 
 ```
-interact -q v100_dev_q -lnodes=1:ppn=10:gpus=1 -A vllab_01 -l walltime=2:00:00
+interact -q v100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_01 -l walltime=2:00:00
 ```
 
 
