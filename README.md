@@ -55,6 +55,10 @@ Now you synchronize all the files under `project` directory with `/home/ylzou/re
 ### Restore deleted files in NewRiver/Huckleberry
 Check `~/.snapshot`, it keeps an hourly backup for 4 days.
 
+### X11 Forwarding
+For Mac user, you have to add `XAuthLocation /opt/X11/bin/xauth` to your `~/.ssh/config`, then connect to any server with `ssh -Y Username@Servername.arc.vt.edu`
+
+
 ## CVMLP
 **NOTE:** Currently, slurm is not working on CVMLP.
 
