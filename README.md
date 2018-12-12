@@ -10,6 +10,7 @@ Instructions for using clusters at Virginia Tech
 - [NewRiver](#newriver)
 - [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
+- [VL-Lab](#vl-lab)
 - [Amazon AWS](#amazon-aws)
 
 ## Common
@@ -227,6 +228,22 @@ srun python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_
 Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node.
 [James](mcclurej@vt.edu) says you can use `CUDA_VISIBLE_DEVICES` to do this, but it has not tested yet.
 
+
+## VL-Lab
+```shell
+# vllab1
+ssh -p 8125 <username>@128.173.88.229
+
+# vllab2
+ssh -p 8126 <username>@128.173.88.229
+
+# vllab3
+ssh -p 8127 <username>@128.173.88.229
+```
+
+**NOTE:** 
+- Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
+- The storage of these machines are not shared.
 
 ## Amazon AWS
 The following instruction is written for VT-Vison group member specifically, who obtains access to VT-Vison AWS account. Please contact Prof. Jia-Bin Huang if you want to use this resource.
