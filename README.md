@@ -231,13 +231,13 @@ Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regardi
 
 ## VL-Lab
 ```shell
-# vllab1
+# vllab1 (1080 Ti x 2)
 ssh -p 8125 <username>@128.173.88.229
 
-# vllab2
+# vllab2 (Titan X x 2)
 ssh -p 8126 <username>@128.173.88.229
 
-# vllab3
+# vllab3 (Titan X x 2)
 ssh -p 8127 <username>@128.173.88.229
 ```
 
