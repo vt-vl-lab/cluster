@@ -158,14 +158,14 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 
 
 ## Cascades
-You can basically follow the instructions for [NewRiver](#newriver).
+For installation, you can basically follow the instructions for [NewRiver](#newriver). 
 
 ### Interactive GPU Jobs
 
 ```
 interact -q v100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_01 -l walltime=2:00:00
 ```
-
+**Update:** Cascades now uses SLURM job submission system, which is the same as Huckleberry.
 
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
