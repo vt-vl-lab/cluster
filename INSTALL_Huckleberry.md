@@ -85,11 +85,16 @@ References:
 [3] http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
 
 ### TensorFlow
+#### Pre-installed TensorFlow with pre-installed anaconda3
 You can load the pre-installed TensorFlow as follows.
-1. `“module load cuda”`
-2. `“source /opt/DL/tensorflow/bin/tensorflow-activate”`
-3. `Enjoy!`
+1. module load gcc cuda anaconda3
+2. You can use TF 1.10 from python
 
+#### Installing TF 1.10 with your own anaconda3
+1. Download [this](https://filebox.ece.vt.edu/~jinchoi/files/TF_huckleberry/TF_Utility-20181012T162146Z-001.zip) and unzip it on huckleberry
+2. Make an virtual env with your own anaconda3, and activate it
+3. Install TF using pip. i.e. pip install tensorflow-1.10.1-cp36-cp36m-linux_ppc64le.whl
+4. Test the installation. i.e. python tfenv_testGPUs.py
 
 ### Pytorch
 Pytorch installation is quite simple. Clone the sources , fulfill the dependencies and there you go!
