@@ -245,6 +245,22 @@ ssh -p 8127 <username>@128.173.88.229
 - Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
 - The storage of these machines are not shared.
 
+### (vllab1) Caffe1 and OpenPose
+You can use OpenPose with your own account (not the root `vllab1`) now:
+1. Go to the project directory
+```
+cd /home/vllab1/tools/openpose/
+```
+2. Set up the environment
+```
+source init.sh
+```
+3. Try the demo. For example
+```
+./build/examples/openpose/openpose.bin --video examples/media/video.avi
+```
+Note that visualization might fail if you are using the remote access. You can choose to save as json file instead. More details please check [here](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md).
+
 ## Amazon AWS
 The following instruction is written for VT-Vison group member specifically, who obtains access to VT-Vison AWS account. Please contact Prof. Jia-Bin Huang if you want to use this resource.
 
