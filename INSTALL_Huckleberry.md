@@ -104,6 +104,11 @@ Pytorch installation is quite simple. Clone the sources , fulfill the dependenci
 3. `conda install numpy pyyaml setuptools cmake cffi`
 4. `NO_CAFFE2_OPS=1 python setup.py install`
 
+Or alternatively, you can follow [this](https://stackoverflow.com/questions/52750622/how-to-install-pytorch-on-power-8-or-ppc64-machine) to not build from source. But currently it only supports PyTorch 0.4.0.
+1. conda install -c anaconda ninja
+2. conda install -c jjhelmus pytorch
+3. conda install -c engility torchvision
+
 Done!
 
 ### Custom Caffe
