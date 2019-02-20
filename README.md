@@ -261,6 +261,8 @@ source init.sh
 ```
 Note that visualization might fail if you are using the remote access. You can choose to save as json file instead. For more details, please check [here](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md).
 
+You can use the `OpenPose` account for this usage, please ask our lab members for the password. 
+
 ### Adobe Creative Cloud (vllab2, vllab3 - Windows)
 You can use products from Adobe Creative Cloud (e.g., PhotoShop, AfterEffects) on these machines.
 
