@@ -101,9 +101,10 @@ You can load the pre-installed TensorFlow as follows.
 Pytorch installation is quite simple. Clone the sources , fulfill the dependencies and there you go!
 
 1. `git clone https://github.com/pytorch/pytorch.git`
-2. `export CMAKE_PREFIX_PATH=[anaconda root directory]`
-3. `conda install numpy pyyaml setuptools cmake cffi`
-4. `NO_CAFFE2_OPS=1 python setup.py install`
+2. (optional) If you want to install a specific version, checkout that version. e.g. `git checkout v0.2.0`
+3. `export CMAKE_PREFIX_PATH=[anaconda virtual env root directory]`
+4. `conda install numpy pyyaml setuptools cmake cffi`
+5. `NO_CAFFE2_OPS=1 python setup.py install`
 Done!
 
 #### From conda repo
