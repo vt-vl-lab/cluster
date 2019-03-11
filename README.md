@@ -121,6 +121,7 @@ interact -q p100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_04 -l walltime=2:00:00
 ```
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
+
 **Valid allocations: vllab_03, vllab_04, vllab_05**
 
 ### Important Commands
@@ -164,6 +165,7 @@ For installation, you can basically follow the instructions for [NewRiver](#newr
 
 ### Interactive GPU Jobs
 **Update:** Cascades now uses SLURM job submission system, which is the same as Huckleberry.
+
 **Valid allocations: vllab_01, vllab_02, vllab_03, vllab_04, vllab_05, vllab_06**
 
 ## Huckleberry (PowerAI)
