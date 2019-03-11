@@ -72,7 +72,8 @@ Cannot log into this anymore.
 - Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
-- Shenandoah(up, cuda: 8.0, 9.2): Titan Xp x 4
+- Shenandoah(up, cuda: 8.0, 9.2): Titan Xp x 4 (Will take it back to the lab soon...)
+- Newell (up): RTX 2080Ti x 8 (IP: 198.82.230.73)
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
 
@@ -120,6 +121,7 @@ interact -q p100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_04 -l walltime=2:00:00
 ```
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
+**Valid allocations: vllab_03, vllab_04, vllab_05**
 
 ### Important Commands
 ```
@@ -161,11 +163,8 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 For installation, you can basically follow the instructions for [NewRiver](#newriver). 
 
 ### Interactive GPU Jobs
-
-```
-interact -q v100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_01 -l walltime=2:00:00
-```
 **Update:** Cascades now uses SLURM job submission system, which is the same as Huckleberry.
+**Valid allocations: vllab_01, vllab_02, vllab_03, vllab_04, vllab_05, vllab_06**
 
 ## Huckleberry (PowerAI)
 ### General Rule of Thumb: DO NOT SKIP THIS!
