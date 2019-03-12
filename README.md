@@ -264,10 +264,15 @@ Note that visualization might fail if you are using the remote access. You can c
 
 You can use the `OpenPose` account for this usage, please ask our lab members for the password. 
 
+### Matlab 
+All machines have Matlab under Windows, vllab2 has Matlab under Ubuntu.
+
 ### Adobe Creative Cloud (vllab2, vllab3 - Windows)
 You can use products from Adobe Creative Cloud (e.g., PhotoShop, AfterEffects) on these machines.
 
-## Amazon AWS
+## Amazon AWS 
+**(no longer available)**
+
 The following instruction is written for VT-Vison group member specifically, who obtains access to VT-Vison AWS account. Please contact Prof. Jia-Bin Huang if you want to use this resource.
 
 Console login: https://194474529881.signin.aws.amazon.com/console
@@ -275,13 +280,3 @@ Console login: https://194474529881.signin.aws.amazon.com/console
 Name: xxx
 
 Password: xxx
-
-### Use Caffe2 and Detectron:
-0. If you are a VT-Vison group member, please go to setp 5 directly because Chen has already set up the enviroment.
-1. Select US West (Oregon) Region. (Important because different region has different setting)
-2. Launch a p3.2xlarge AWS instance with Deep Learning Base AMI (Ubuntu) Version 3.0 - ami-38c87440
-3. Put [this](https://gist.github.com/matsui528/6d223d17241842c84d5882a9afa0453a) on `/home/ubuntu/`
-4. Run `cd ~ && source install_caffe2_detectron.sh`
-5. You can view the dashboard [here](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:)
-6. SSH to the VM via `ssh -i /PATH/TO/.pem ubuntu@YOUR.VM'S.IP`
-7. Caffe2 and Detectron are installed under `~/Project/detectron`
