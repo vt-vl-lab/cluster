@@ -164,7 +164,9 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 For installation, you can basically follow the instructions for [NewRiver](#newriver). 
 
 ### Interactive GPU Jobs
-**Update:** Cascades now uses SLURM job submission system, which is the same as Huckleberry.
+```
+salloc -n1 --mem-per-cpu=16G -p v100_normal_q -t 120:00 --gres=gpu:1 -A vllab_01
+```
 
 **Valid allocations: vllab_01, vllab_02, vllab_03, vllab_04, vllab_05, vllab_06**
 
