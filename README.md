@@ -247,6 +247,7 @@ ssh -p 8127 <username>@128.173.88.229
 **NOTE:** 
 - Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
 - The storage of these machines are not shared.
+- Questions? Check [INSTALL_VLLAB.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_VLLAB.md) first.
 
 ### Caffe1 and OpenPose (vllab1 - Ubuntu)
 You can use OpenPose with your own account (not the root `vllab1`) now:
