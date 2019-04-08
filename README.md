@@ -73,7 +73,7 @@ Cannot log into this anymore.
 - Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
 - Shenandoah(up, cuda: 8.0, 9.2): Titan Xp x 4 (Will take it back to the lab soon...)
-- Newell (up): RTX 2080Ti x 8 (IP: 198.82.230.73)
+- Newell (up, cuda: 9.0, 10.0): RTX 2080Ti x 8 (IP: 198.82.230.73)
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
 
@@ -231,6 +231,9 @@ srun python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_
 Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node.
 [James](mcclurej@vt.edu) says you can use `CUDA_VISIBLE_DEVICES` to do this, but it has not tested yet.
 
+## Newell/Shenandoah
+How to install cuda 9.0 on Ubuntu 18.04 (requires root access)
+https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73
 
 ## VL-Lab
 ```shell
