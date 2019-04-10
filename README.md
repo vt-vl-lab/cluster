@@ -171,14 +171,6 @@ salloc -n1 --mem-per-cpu=16G -p v100_normal_q -t 120:00 --gres=gpu:1 -A vllab_01
 **Valid allocations: vllab_01, vllab_02, vllab_03, vllab_04, vllab_05, vllab_06**
 
 ## Huckleberry (PowerAI)
-### General Rule of Thumb: DO NOT SKIP THIS!
-Please fully utilize all the GPUs when you are submitting jobs to PowerAI. Each gpu node on PowerAI consists of 4 gpus. If you just submit a job naively, it will only use one GPU but it will block other people to use that node. It is too inefficient. So please run 4 jobs per GPU node. It is important as people outside the lab started to use PowerAI. 
-
-So when you have 4 different models to train, please DO NOT `sbatch model1.sh`, `sbatch model2.sh`, `sbatch model3.sh`, `sbatch model4.sh` unless each of your job requires GPU memory more than 16GB.
-Please do `sbatch model1.sh`, ssh to the node your model1 is assigned, then run your three other models in a background of that node using nohup, screen, or whatever your choice.
-As far as we know, this is the best way to submit multiple jobs on a single GPU node. If you have more elegant way to submit 4 different jobs on a single GPU node, please let us know.
-
-
 ### Install
 Check [INSTALL_Huckleberry.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_Huckleberry.md)
 
