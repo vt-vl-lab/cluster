@@ -34,7 +34,7 @@ conda install powerai
 keep type 'enter' and then enter 1 for license acceptance
 ```export IBM_POWERAI_LICENSE_ACCEPT=yes```
 
-#>>>>>>>>>>>>>>>>>>>>---------Part 2. DL Library Usages----------<<<<<<<<<<<<<<<<<<<#
+#### DL library usage
 step 1: request for GPU nodes
 ```salloc -N 1 --gres=gpu:pascal:1 --partition=normal_q --account=openpower```
 step 2: load all necessary modules
