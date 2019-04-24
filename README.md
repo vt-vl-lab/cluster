@@ -229,16 +229,16 @@ https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73
 
 ## VL-Lab
 ```shell
-# vllab1 (1080 Ti x 2)
+# vllab1 (1080 Ti (11G) x 2)
 ssh -p 8125 <username>@128.173.88.229
 
-# vllab2 (Titan X x 2)
+# vllab2 (Titan X (12G) x 2)
 ssh -p 8126 <username>@128.173.88.229
 
-# vllab3 (Titan X x 2)
+# vllab3 (Titan X (12G) x 2)
 ssh -p 8127 <username>@128.173.88.229
 
-# vllab4 (Titan RTX x 2)
+# vllab4 (Titan RTX (24G) x 2)
 ssh -p 8128 <username>@128.173.88.229
 ```
 
