@@ -238,8 +238,11 @@ ssh -p 8126 <username>@128.173.88.229
 # vllab3 (Titan X (12G) x 2)
 ssh -p 8127 <username>@128.173.88.229
 
-# vllab4 (Titan RTX (24G) x 2)
+# vllab4 (Titan RTX (24G) x 2, Ubuntu only)
 ssh -p 8128 <username>@128.173.88.229
+
+# vllab5 (Titan RTX (24G) x 2, Ubuntu only)
+ssh -p 8129 <username>@128.173.88.229
 ```
 
 **NOTE:** 
