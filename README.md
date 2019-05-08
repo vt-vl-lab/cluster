@@ -105,6 +105,11 @@ sudo service slurm restart
 sudo scontrol update node=fukushima state=resume
 ```
 
+### Newell/Shenandoah
+How to install cuda 9.0 on Ubuntu 18.04 (requires root access)
+https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73
+
+
 ## NewRiver
 ### Job Submission
 Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
@@ -188,7 +193,10 @@ You should submit GPU jobs only using slurm. You can follow the instructions [he
 In addition to the instructions, [here](https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/) are some more useful information. 
 
 ### Queue
-Our group memebers can use priority_q when submitting either interactive or batch jobs on PowerAI. Instead of submitting jobs to "normal_q" (crowded and limited walltime), we can submit jobs to "priory_q". In "priority_q", we will have relaxed walltime restriction and ensure at least 40% of the computation cycles of PowerAI are allocated for priority_q. 
+Our group memebers can use ece_priority_q when submitting either interactive or batch jobs on PowerAI. Instead of submitting jobs to "normal_q" (crowded and limited walltime), we can submit jobs to "ece_priory_q". In "ece_priority_q", we will have relaxed walltime restriction and ensure at least 40% of the computation cycles of PowerAI are allocated for ece_priority_q. 
+
+**NOTE:** Currently, job submission using "ece_priority_q" will not show on squeue.
+
 
 #### Interactive GPU job
 ```
@@ -223,9 +231,6 @@ srun python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_
 Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node.
 [James](mcclurej@vt.edu) says you can use `CUDA_VISIBLE_DEVICES` to do this, but it has not tested yet.
 
-## Newell/Shenandoah
-How to install cuda 9.0 on Ubuntu 18.04 (requires root access)
-https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73
 
 ## VL-Lab
 ```shell
