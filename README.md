@@ -225,7 +225,7 @@ module load cuda
 source /opt/DL/tensorflow/bin/tensorflow-activate
 export PYTHONHOME="/home/jinchoi/pkg/miniconda2/envs/tensorflow"
 
-srun python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_split_0_TRAIN --cfg experiments/cfgs/c3d_rgb_detect_lr_0.001.yml --network C3D_detect_train --iters 3200000
+python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_split_0_TRAIN --cfg experiments/cfgs/c3d_rgb_detect_lr_0.001.yml --network C3D_detect_train --iters 3200000
 ```
 #### Submission of multiple GPU jobs per one GPU node
 Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node.
