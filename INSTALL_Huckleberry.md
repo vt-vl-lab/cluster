@@ -151,12 +151,28 @@ Pytorch installation is quite simple. Clone the sources , fulfill the dependenci
 5. `NO_CAFFE2_OPS=1 python setup.py install`
 Done!
 
+Possible error for v1.1.0: 
+-Build fails because it cannot find a gfortran library
+Solution: 
+1. Check if gfortran is in your conda environment (skip to 3 if YES)
+`ls /home/USERNAME/.conda/envs/CONDA_ENVIRONMENT/lib/ | grep gfortran`
+2. Install gfortran
+`conda install libgfortran`
+3. Add the path to gfortran and build pytorch 
+`USE_MKLDNN=0 BUILD_CAFFE2_OPS=0 LD_LIBRARY_PATH="/home/USERNAME/.conda/envs/CONDA_ENVIRONMEN/lib/" python setup.py install`
+
+
 #### From conda repo
 Or alternatively, you can follow [this](https://stackoverflow.com/questions/52750622/how-to-install-pytorch-on-power-8-or-ppc64-machine) to not build from source. But currently it only supports PyTorch 0.4.0.
 1. `conda install -c anaconda ninja`
 2. `conda install -c jjhelmus pytorch`
 3. `conda install -c engility torchvision`
 Done!
+
+
+#### Using PowerAI environment (v1.0.1)
+module load gcc/7.3.0 cuda/10.1.105 jdk/8.0.5.31 Anaconda3/2019.03
+source activate powerai16_ibm
 
 ### Custom Caffe
 No one has been successfully installed a custom Caffe on PowerAI. There are some problems installing the dependencies such as glog, gflags, google protobuf.
