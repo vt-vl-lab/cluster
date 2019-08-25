@@ -151,9 +151,7 @@ Pytorch installation is quite simple. Clone the sources , fulfill the dependenci
 5. `NO_CAFFE2_OPS=1 python setup.py install`
 Done!
 
-Possible error for v1.1.0: 
--Build fails because it cannot find a gfortran library
-Solution: 
+Possible error for v1.1.0: Build fails because it cannot find a gfortran library
 1. Check if gfortran is in your conda environment (skip to 3 if YES)
 `ls /home/USERNAME/.conda/envs/CONDA_ENVIRONMENT/lib/ | grep gfortran`
 2. Install gfortran
@@ -171,8 +169,10 @@ Done!
 
 
 #### Using PowerAI environment (v1.0.1)
-module load gcc/7.3.0 cuda/10.1.105 jdk/8.0.5.31 Anaconda3/2019.03
-source activate powerai16_ibm
+```
+$ module load gcc/7.3.0 cuda/10.1.105 jdk/8.0.5.31 Anaconda3/2019.03
+$ source activate powerai16_ibm
+```
 
 ### Custom Caffe
 No one has been successfully installed a custom Caffe on PowerAI. There are some problems installing the dependencies such as glog, gflags, google protobuf.
