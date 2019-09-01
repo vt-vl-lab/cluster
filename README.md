@@ -166,7 +166,20 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 
 
 ## Cascades
-For installation, you can basically follow the instructions for [NewRiver](#newriver) as both clusters use the same system.
+Since both NewRiver and Cascades use the same system, you can use/share the same conda environment. 
+
+### Create conda environment 
+Here is an example of creating a conda environment. Chen uses the following commands to create an environment for FlowNet2 (pytorch 0.4.0, gcc5, cuda 9.0)
+
+```
+conda create -n py36torch040cuda90 python=3.6
+source activate py36torch040cuda90
+conda install -c psi4 gcc-5 
+conda install pytorch=0.4.0 torchvision cudatoolkit=9.0 -c pytorch
+pip install opencv-python==3.4.2.16
+pip install opencv-contrib-python==3.4.2.16
+conda install -c menpo ffmpeg
+```
 
 ### Interactive GPU Jobs
 ```
@@ -174,6 +187,7 @@ salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres
 ```
 
 **Valid allocations: vllab_01, vllab_02, vllab_03, vllab_04, vllab_05, vllab_06**
+
 
 ### A sample slurm batch script using pytorch
 This is a train.sh file Chen uses. You can modify it appropriately.
@@ -191,13 +205,13 @@ This is a train.sh file Chen uses. You can modify it appropriately.
 hostname
 echo $CUDA_VISIBLE_DEVICES
 module load cuda/9.0.176
-source activate py36torch100cuda92
+source activate py36torch040cuda90
 
 cd /home/chengao/Project/videocomp
 
 python train.py
 ```
-
+You can simply do `sbatch train.sh` to submit the job.
 
 
 ## Huckleberry (PowerAI)
