@@ -1,22 +1,13 @@
 ## Huckleberry
 
 ## Table of Contents
-- [ARC account](#arc-account) 
-- [Access](#access) 
-- [Anaconda](#anaconda)
-- [Dependencies](#dependencies)
-- [CUDA](#cuda)
-- [Deep Learning Frameworks](#deep-learning-frameworks)
-- [Submit a job](#job)
-
-### Introduction: things to set-up on Huckleberry
-5. CUDA
-6. Install deep learning frameworks
-	- PyTorch
-	- TensorFlow
-7. Submit a job using slurm
-
-
+- [ARC account](###arc-account) 
+- [Access](###access) 
+- [Anaconda](###anaconda)
+- [Dependencies](###dependencies)
+- [CUDA](###cuda)
+- [Deep Learning Frameworks](###deep-learning-frameworks)
+- [Submit a job](###job)
 
 ### ARC Acount
 If you don't have an VT ARC account, make one from here: https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=2d1b7bfa0ff52680d3254b9ce1050e46
