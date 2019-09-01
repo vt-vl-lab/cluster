@@ -9,7 +9,7 @@
 - [Deep Learning Frameworks](#deep-learning-frameworks)
 - [Submit a job](#job)
 
-## ARC Acount
+### ARC Acount
 If you don't have an VT ARC account, make one from here: https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=2d1b7bfa0ff52680d3254b9ce1050e46
   - When requesting an account, don't forget to mention that Jia-Bin Huang is your supervisor so that you can have "allocations" for faster job execution without pending forever in job queues. You can also use "ece_priority_q" instead of "normal_q" in slurm to use more GPUs and submit higher priority jobs.
 
