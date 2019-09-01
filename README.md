@@ -215,61 +215,16 @@ You can simply do `sbatch train.sh` to submit the job.
 
 
 ## Huckleberry (PowerAI)
-### Install
+### Install & Usage
 Check [INSTALL_Huckleberry.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_Huckleberry.md)
-
-
 ### Administrator
 You can ask [James McClure](mcclurej@vt.edu) if you have questions. Or you can ask [Jinwoo](jinchoi@vt.edu).
 ### Help Ticket
 When there is a problem, e.g. particular node down when you cancel a job by either ctrl + c or scancel command, it would probably be good to submit a help ticket from ARC website if nodes are offline for this reason and also to email. Check the box for huckleberry. This should help to ensure that multiple people see the request. 
 https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=4c7b8c4e0f712280d3254b9ce1050e3c
-
-
-### Using GPUs
-You should submit GPU jobs only using slurm. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/slurm-user-guide/). 
-
-In addition to the instructions, [here](https://www.rc.fas.harvard.edu/resources/documentation/convenient-slurm-commands/) are some more useful information. 
-
-### Queue
-Our group memebers can use ece_priority_q when submitting either interactive or batch jobs on PowerAI. Instead of submitting jobs to "normal_q" (crowded and limited walltime), we can submit jobs to "ece_priory_q". In "ece_priority_q", we will have relaxed walltime restriction and ensure at least 40% of the computation cycles of PowerAI are allocated for ece_priority_q. 
-
-**NOTE:** Currently, job submission using "ece_priority_q" will not show on squeue.
-
-
-#### Interactive GPU job
-```
-salloc -n1 --mem-per-cpu=8G -p priority_q -t 120:00 --gres=gpu:pascal:1
-srun --pty /bin/bash
-```
-**NOTE:** When you want to exit the interactive mode, you need to do `ctrl+D` twice. 
-
 #### Debugging a slurm job ID
 `scontrol show jobid -dd <jobid>`
 It will show you what .sh file you used for the jobid. Sometimes you need this information.
-
-#### A sample slurm batch script using TF
-This is a train.sh file Jinwoo uses. You can modify it appropriately.
-```
-#!/bin/bash -l
-#SBATCH -p normal_q   # you can also use priority_q 
-#SBATCH -n 1 # number of tasks to run
-#SBATCH -t 144:00:00 # walltime
-#SBATCH -J c3d-full # job name
-#SBATCH -o ./log/C3D-RGB-Full_Training_UCF101_lr_0.001_batch_256_320k_full_img_size.log
-
-hostname
-echo $CUDA_VISIBLE_DEVICES
-module load cuda
-source /opt/DL/tensorflow/bin/tensorflow-activate
-export PYTHONHOME="/home/jinchoi/pkg/miniconda2/envs/tensorflow"
-
-python ./tools/train_net.py --device gpu --device_id 0 --imdb UCF101_RGB_1_split_0_TRAIN --cfg experiments/cfgs/c3d_rgb_detect_lr_0.001.yml --network C3D_detect_train --iters 3200000
-```
-#### Submission of multiple GPU jobs per one GPU node
-Each GPU node on PowerAI consists of 4 GPUs. But there is no instruction regarding how to submit multiple jobs (e.g. 4 different jobs) per one GPU node.
-[James](mcclurej@vt.edu) says you can use `CUDA_VISIBLE_DEVICES` to do this, but it has not tested yet.
-
 
 ## VL-Lab
 ```shell
