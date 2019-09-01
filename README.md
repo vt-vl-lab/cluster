@@ -166,14 +166,39 @@ For the “User”, “remote”, “privatekey” fields, you should modify the
 
 
 ## Cascades
-For installation, you can basically follow the instructions for [NewRiver](#newriver). 
+For installation, you can basically follow the instructions for [NewRiver](#newriver) as both clusters use the same system.
 
 ### Interactive GPU Jobs
 ```
-salloc -n1 --mem-per-cpu=16G -p v100_normal_q -t 120:00 --gres=gpu:1 -A vllab_01
+salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_01
 ```
 
 **Valid allocations: vllab_01, vllab_02, vllab_03, vllab_04, vllab_05, vllab_06**
+
+### A sample slurm batch script using pytorch
+This is a train.sh file Chen uses. You can modify it appropriately.
+```
+#!/bin/bash -l
+#SBATCH -t 72:00:00
+#SBATCH -p v100_normal_q
+#SBATCH -A vllab_01
+#SBATCH --nodes=1
+#SBATCH --mem-per-cpu=16G
+#SBATCH --gres=gpu:1
+#SBATCH -J deepfill
+#SBATCH -o logs/train.out
+
+hostname
+echo $CUDA_VISIBLE_DEVICES
+module load cuda/9.0.176
+source activate py36torch100cuda92
+
+cd /home/chengao/Project/videocomp
+
+python train.py
+```
+
+
 
 ## Huckleberry (PowerAI)
 ### Install
