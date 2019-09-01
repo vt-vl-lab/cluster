@@ -163,6 +163,8 @@ $ source activate powerai16_ibm
 ```
 
 ## Job
+Valid allocations: vllab_05, vllab_07
+
 ### Interactive jobs
 `salloc -n2 -t 144:00:00 --gres=gpu:1 --mem=125g -p ece_priority_q`
 This command will assign you a node with a node with 1 gpu, 2 cpus, 125GB cpu memory for 144 hours on ece_priority_q. And you can use bash shell to do whatever you want.
