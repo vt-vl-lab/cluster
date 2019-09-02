@@ -127,7 +127,7 @@ interact -q p100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_04 -l walltime=2:00:00
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
 
-**Valid allocations: vllab_03, vllab_04, vllab_05**
+**Valid allocations: vllab_04, vllab_05, vllab_07**
 
 ### Important Commands
 ```
