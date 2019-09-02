@@ -67,6 +67,12 @@ For Mac user, you have to add `XAuthLocation /opt/X11/bin/xauth` to your `~/.ssh
 Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
 Cannot log into this anymore.
 
+### Connecting to the server
+You can connect to the server by ssh:
+`ssh [your ece account name]@[server name].ece.vt.edu`
+Note that, if you are not using a VT IP (e.g. you are not in the campus), you need to specify the port to 2222:
+`ssh -p 2222 [your ece account name]@[server name].ece.vt.edu`
+
 ### Computing Resources
 1. GPU machines
 - Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
