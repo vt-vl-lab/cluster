@@ -69,9 +69,13 @@ Cannot log into this anymore.
 
 ### Connecting to the server
 You can connect to the server by ssh:
-`ssh [your ece account name]@[server name].ece.vt.edu`
+```
+ssh [your ece account name]@[server name].ece.vt.edu
+```
 Note that, if you are not using a VT IP (e.g. you are not in the campus), you need to specify the port to 2222:
-`ssh -p 2222 [your ece account name]@[server name].ece.vt.edu`
+```
+ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
+```
 
 ### Computing Resources
 1. GPU machines
