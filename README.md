@@ -278,10 +278,13 @@ Note that visualization might fail if you are using the remote access. You can c
 You can use the `OpenPose` account for this usage, please ask our lab members for the password. 
 
 ### Matlab 
-All machines have Matlab under Windows, vllab2 has Matlab under Ubuntu.
+vllab1, vllab2, vllab3 have Matlab under Windows, vllab2 has Matlab under Ubuntu.
 
 ### Adobe Creative Cloud (vllab2, vllab3 - Windows)
 You can use products from Adobe Creative Cloud (e.g., PhotoShop, AfterEffects) on these machines.
+
+### COLMAP (vllab5 - Ubuntu)
+You should be able to use it with any account. Please check [this](https://colmap.github.io/cli.html) for more details.
 
 ## Amazon AWS 
 **(no longer available)**
