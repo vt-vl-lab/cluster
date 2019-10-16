@@ -11,6 +11,7 @@ Instructions for using clusters at Virginia Tech
 - [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
 - [VL-Lab](#vl-lab)
+- [RTX cluster](#rtx)
 - [Amazon AWS](#amazon-aws)
 
 ## Common
@@ -285,6 +286,21 @@ You can use products from Adobe Creative Cloud (e.g., PhotoShop, AfterEffects) o
 
 ### COLMAP (vllab5 - Ubuntu)
 You should be able to use it with any account. Please check [this](https://colmap.github.io/cli.html) for more details.
+
+
+## RTX
+```shell
+# RTX-1 (RTX 2080 (11G) x 10, CentOS)
+ssh <username>@172.28.145.100
+
+# RTX-2 (RTX 2080 (11G) x 10, CentOS)
+ssh <username>@172.28.145.10
+```
+
+**NOTE:** 
+- Please ask Joseph to get the initial password, then you can change it with `passwd`.
+- Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
+- The storage of these machines are not shared.
 
 ## Amazon AWS 
 **(no longer available)**
