@@ -83,8 +83,8 @@ ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
 - Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
-- Shenandoah(up, cuda: 8.0, 9.2): Titan Xp x 4 (Will take it back to the lab soon...)
-- Newell (up, cuda: 9.0, 10.0): RTX 2080Ti x 8 (IP: 198.82.230.73)
+- Shenandoah(up, cuda: 8.0, 9.2): Titan Xp (12G) x 4 (Ubuntu 18.04)
+- Newell (up, cuda: 9.0, 10.0): RTX 2080Ti (10G) x 8 (Ubuntu 18.04)
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
 
