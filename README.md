@@ -83,7 +83,7 @@ ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
 - Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
 - Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
-- Shenandoah(up, cuda: 8.0, 9.2): Titan Xp (12G) x 4 (Ubuntu 18.04)
+- Shenandoah(up, cuda: 8.0, 9.2, 10.0): Titan Xp (12G) x 4 (Ubuntu 18.04)
 - Newell (up, cuda: 9.0, 10.0): RTX 2080Ti (10G) x 8 (Ubuntu 18.04)
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
@@ -98,6 +98,8 @@ ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
 
 ### Install
 Check [INSTALL_CVMLP.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_CVMLP.md)
+
+**NOTE:** For Shenandoah and Newell, if you want to install new CUDA version. You cannot run your `.run` file under your home directly (seems that the machine cannot find the path). Instead, you can copy it to `/tmp` first, then install it there.
 
 ### root access (root users only)
 #### get a su bash shell
