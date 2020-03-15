@@ -297,6 +297,9 @@ ssh <username>@172.28.145.100
 
 # RTX-2 (RTX 2080 (11G) x 10, CentOS)
 ssh <username>@172.28.145.10
+
+# To use admin account, you cannot ssh into it, please use
+su - admin
 ```
 
 **NOTE:** 
