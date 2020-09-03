@@ -10,6 +10,7 @@ Instructions for using clusters at Virginia Tech
 - [NewRiver](#newriver)
 - [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
+- [Infer-T4](#infer-t4)
 - [VL-Lab](#vl-lab)
 - [RTX cluster](#rtx)
 - [Amazon AWS](#amazon-aws)
@@ -238,6 +239,13 @@ https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=4c7b8c4e0f712280d3254b9
 #### Debugging a slurm job ID
 `scontrol show jobid -dd <jobid>`
 It will show you what .sh file you used for the jobid. Sometimes you need this information.
+
+## Infer-T4
+
+Members of VT who have received accounts on infer have access to the infer login nodes and the infer cluster job queues. Typical workflow involves logging into a login node for accessing files and applications; creating code and compiling programs; submitting jobs to a job queue to be run on compute nodes; and, displaying information about jobs and controlling submitted jobs.
+
+### Install & Usage
+Please check this [document](https://github.com/vt-vl-lab/cluster/blob/master/Infer_T4_cluster.pdf) for details.
 
 ## VL-Lab
 ```shell
