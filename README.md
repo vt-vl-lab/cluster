@@ -86,6 +86,7 @@ ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
 - Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
 - Shenandoah(up, cuda: 8.0, 9.2, 10.0): Titan Xp (12G) x 4 (Ubuntu 18.04)
 - Newell (up, cuda: 9.0, 10.0): RTX 2080Ti (10G) x 8 (Ubuntu 18.04)
+- McAfee (up, cuda: 10.2?): RTX 2080 (11G) x 4 (Ubuntu 20.04). Try using `mcafee.ece.ipv4.vt.edu` if `mcafee.ece.vt.edu` not available
 - Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
 
@@ -303,8 +304,8 @@ You should be able to use it with any account. Please check [this](https://colma
 # RTX-1 (RTX 2080 (11G) x 10, CentOS)
 ssh <username>@172.28.145.100
 
-# RTX-2 (RTX 2080 (11G) x 10, CentOS)
-ssh <username>@172.28.145.10
+# RTX-2 (RTX 2080 (11G) x 10, CentOS) - Need to be set up, stay tuned.
+ssh <username>@172.28.145.104
 
 # To use admin account, you cannot ssh into it, please use
 su - admin
