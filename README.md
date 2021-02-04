@@ -82,13 +82,13 @@ ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
 ### Computing Resources
 1. GPU machines
 - Fukushima(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
-- Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16 (w/ 9 are working), 32 Cores Intel, 396GB Ram
-- Hebb(up, cuda: 9.0, 9.2): Titan Black x 7 
+- Werbos(up, cuda: 7.0, 7.5, 8.0): k80 x 16, 32 Cores Intel, 396GB Ram
 - Shenandoah(up, cuda: 8.0, 9.2, 10.0): Titan Xp (12G) x 4 (Ubuntu 18.04)
 - Newell (up, cuda: 9.0, 10.0): RTX 2080Ti (10G) x 8 (Ubuntu 18.04)
 - McAfee (up, cuda: 10.2?): RTX 2080 (11G) x 4 (Ubuntu 20.04). Try using `mcafee.ece.ipv4.vt.edu` if `mcafee.ece.vt.edu` not available
 - Claytor (up, cuda: 11.1?): RTX 2080 (11G) x 4 (Ubuntu 20.04). Please use `cvl10.ece.vt.edu` to access it.
-- Tesla(gpu down): k40 x 8, 32 Cores Intel, 3s96GB Ram
+- Hebb(up, cuda: 9.0, 9.2): Titan Black x 7
+- Tesla(gpu down): k40 x 8, 32 Cores Intel, 396GB Ram
 - Rosenblatt(down): Titan Black x 3 (?) 
 
 2. CPU-only machines
@@ -316,14 +316,3 @@ su - admin
 - Please ask Joseph to get the initial password, then you can change it with `passwd`.
 - Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
 - The storage of these machines are not shared.
-
-## Amazon AWS 
-**(no longer available)**
-
-The following instruction is written for VT-Vison group member specifically, who obtains access to VT-Vison AWS account. Please contact Prof. Jia-Bin Huang if you want to use this resource.
-
-Console login: https://194474529881.signin.aws.amazon.com/console
-
-Name: xxx
-
-Password: xxx
