@@ -13,9 +13,12 @@ Instructions for using clusters at Virginia Tech
 - [Infer-T4](#infer-t4)
 - [VL-Lab](#vl-lab)
 - [RTX cluster](#rtx)
-- [Amazon AWS](#amazon-aws)
 
 ## Common
+- There are 4 different systems: CVMLP, ARC clusters, VL-Lab, and RTX. We only manage accounts for VL-Lab and RTX.
+- For CVMLP, you need your ECE account. Please contact John (john.ghra@vt.edu) if you don't have one.
+- For ARC clusters (including Infer-T4), you can find information on their [website](https://www.arc.vt.edu/).
+
 ### Switch between different ARC clusters
 Note that all ARC clusters (e.g., NewRiver, Cascades, Huckleberry) share exactly **the same** file system (i.e., every file modifications you do in one cluster will affect all your clusters!). You should set up your environment in separate spaces for each cluster. And you can use the following scipts to automatically choose the correct environment when you log in.
 
@@ -268,7 +271,7 @@ ssh -p 8129 <username>@128.173.88.229
 ```
 
 **NOTE:** 
-- Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
+- Please ask Yuliang to create a new user for you. And then you can set up your own anaconda environment, CUDA and CUDNN are already set up.
 - The storage of these machines are not shared.
 - Questions? Check [INSTALL_VLLAB.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_VLLAB.md) first.
 
@@ -313,6 +316,6 @@ su - admin
 ```
 
 **NOTE:** 
-- Please ask Joseph to get the initial password, then you can change it with `passwd`.
+- Please ask Yuliang to get the initial password, then you can change it with `passwd`.
 - Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
 - The storage of these machines are not shared.
