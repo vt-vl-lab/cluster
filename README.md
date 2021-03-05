@@ -7,7 +7,7 @@ Instructions for using clusters at Virginia Tech
 ## Table of Contents
 - [Common](#common) 
 - [CVMLP](#cvmlp) 
-- [NewRiver](#newriver)
+- [NewRiver (will be retired by the end of 2021 Spring)](#newriver)
 - [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
 - [Infer-T4](#infer-t4)
@@ -68,10 +68,6 @@ For Mac user, you have to add `XAuthLocation /opt/X11/bin/xauth` to your `~/.ssh
 ## CVMLP
 **NOTE:** Currently, slurm is not working on CVMLP.
 
-### Wiki
-Wiki page: https://mlp.ece.vt.edu/wiki/doku.php/computing
-Cannot log into this anymore.
-
 ### Connecting to the server
 You can connect to the server by ssh:
 ```
@@ -81,6 +77,7 @@ Note that, if you are not using a VT IP (e.g. you are not in the campus), you ne
 ```
 ssh -p 2222 [your ece account name]@[server name].ece.vt.edu
 ```
+**NOTE:** You cannot do this on the new machines (i.e., Shenandoah, Newell, McAfee, Claytor).
 
 ### Computing Resources
 1. GPU machines
@@ -116,13 +113,6 @@ sudo bash
 ```
 sudo reboot
 ```
-#### restart slurm for rebooted machine
-e.g. after fukushima reboot, you need the followings on the slurm master machine (marr). 
-```
-sudo munged
-sudo service slurm restart
-sudo scontrol update node=fukushima state=resume
-```
 
 ### Newell/Shenandoah
 How to install cuda 9.0 on Ubuntu 18.04 (requires root access)
@@ -130,7 +120,7 @@ https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73
 
 
 ## NewRiver
-### Job Submission
+### Job Submission (will be retired by the end of 2021 Spring)
 Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
 
 Example: [CPU (Matlab) job submission using PBS](https://github.com/vt-vl-lab/cluster/blob/master/examples/PBS_Matlab_NewRiver.md)
@@ -202,7 +192,7 @@ conda install -c menpo ffmpeg
 
 ### Interactive GPU Jobs
 ```
-salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_05
+salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_06
 ```
 
 **Valid allocations: vllab_06, vllab_07, vllab_08, vllab_09, vllab_10**
@@ -237,7 +227,7 @@ You can simply do `sbatch train.sh` to submit the job.
 ### Install & Usage
 Check [INSTALL_Huckleberry.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_Huckleberry.md)
 ### Administrator
-You can ask [James McClure](mcclurej@vt.edu) if you have questions. Or you can ask [Jinwoo](jinchoi@vt.edu).
+You can ask [James McClure](mcclurej@vt.edu) if you have questions.
 ### Help Ticket
 When there is a problem, e.g. particular node down when you cancel a job by either ctrl + c or scancel command, it would probably be good to submit a help ticket from ARC website if nodes are offline for this reason and also to email. Check the box for huckleberry. This should help to ensure that multiple people see the request. 
 https://vt4help.service-now.com/sp?id=sc_cat_item&sys_id=4c7b8c4e0f712280d3254b9ce1050e3c
@@ -254,7 +244,7 @@ Please check this [document](https://github.com/vt-vl-lab/cluster/blob/master/In
 
 ## VL-Lab
 ```shell
-# vllab1 (1080 Ti (11G) x 2)
+# vllab1 (1080 Ti (11G) x 2, Ubuntu only)
 ssh -p 8125 <username>@128.173.88.229
 
 # vllab2 (Titan X (12G) x 2)
@@ -275,26 +265,8 @@ ssh -p 8129 <username>@128.173.88.229
 - The storage of these machines are not shared.
 - Questions? Check [INSTALL_VLLAB.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_VLLAB.md) first.
 
-### Caffe1 and OpenPose (vllab1 - Ubuntu) (Currently not available due to machine re-installation)
-You can use OpenPose with your own account (not the root `vllab1`) now:
-1. Go to the project directory
-```
-cd /home/vllab1/tools/openpose/
-```
-2. Set up the environment
-```
-source init.sh
-```
-3. Try the demo. For example
-```
-./build/examples/openpose/openpose.bin --video examples/media/video.avi
-```
-Note that visualization might fail if you are using the remote access. You can choose to save as json file instead. For more details, please check [here](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/demo_overview.md).
-
-You can use the `OpenPose` account for this usage, please ask our lab members for the password. 
-
 ### Matlab 
-vllab1, vllab2, vllab3 have Matlab under Windows, vllab2 has Matlab under Ubuntu.
+vllab2, vllab3 have Matlab under Windows, vllab2 has Matlab under Ubuntu.
 
 ### Adobe Creative Cloud (vllab2, vllab3 - Windows)
 You can use products from Adobe Creative Cloud (e.g., PhotoShop, AfterEffects) on these machines.
@@ -308,7 +280,7 @@ You should be able to use it with any account. Please check [this](https://colma
 # RTX-1 (RTX 2080 (11G) x 10, CentOS)
 ssh <username>@172.28.145.100
 
-# RTX-2 (RTX 2080 (11G) x 10, CentOS) - Need to be set up, stay tuned.
+# RTX-2 (RTX 2080 (11G) x 10, CentOS)
 ssh <username>@172.28.145.104
 
 # To use admin account, you cannot ssh into it, please use
