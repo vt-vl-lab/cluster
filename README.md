@@ -136,7 +136,7 @@ interact -q p100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_05 -l walltime=2:00:00
 
 NOTE: You can also use `p100_normal_q` and set longer walltime.
 
-**Valid allocations: vllab_06, vllab_07, vllab_08, vllab_09, vllab_10**
+**Valid allocations: vllab_07, vllab_08, vllab_09, vllab_10**
 
 ### Important Commands
 ```
@@ -195,7 +195,7 @@ conda install -c menpo ffmpeg
 salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_06
 ```
 
-**Valid allocations: vllab_06, vllab_07, vllab_08, vllab_09, vllab_10**
+**Valid allocations: vllab_07, vllab_08, vllab_09, vllab_10**
 
 
 ### A sample slurm batch script using pytorch
