@@ -7,7 +7,6 @@ Instructions for using clusters at Virginia Tech
 ## Table of Contents
 - [Common](#common) 
 - [CVMLP](#cvmlp) 
-- [NewRiver (will be retired by the end of 2021 Spring)](#newriver)
 - [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
 - [Infer-T4](#infer-t4)
@@ -38,6 +37,9 @@ else
     # this might cause some issues.
 fi
 ```
+
+NOTE: NewRiver is retired, please use Infer-T4 if you want to use P100 GPUs.
+
 
 ### Use customized python kernel in Jupyter Notebook:
 1. Install anaconda/miniconda of your choice
@@ -119,63 +121,9 @@ How to install cuda 9.0 on Ubuntu 18.04 (requires root access)
 https://gist.github.com/Mahedi-61/2a2f1579d4271717d421065168ce6a73
 
 
-## NewRiver
-### Job Submission (will be retired by the end of 2021 Spring)
-Access to all compute engines (aside from interactive nodes) is controlled via the job scheduler. You can follow the instructions [here](https://secure.hosting.vt.edu/www.arc.vt.edu/computing/newriver/#examples)
-
-Example: [CPU (Matlab) job submission using PBS](https://github.com/vt-vl-lab/cluster/blob/master/examples/PBS_Matlab_NewRiver.md)
-
-### Install
-Check [INSTALL_NewRiver.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_NewRiver.md)
-
-### Interactive GPU Jobs
-
-```
-interact -q p100_dev_q -lnodes=1:ppn=2:gpus=1 -A vllab_05 -l walltime=2:00:00
-```
-
-NOTE: You can also use `p100_normal_q` and set longer walltime.
-
-**Valid allocations: vllab_07, vllab_08, vllab_09, vllab_10**
-
-### Important Commands
-```
-# Show CPU resources usage
-showq
-
-# See how many empty (GPU) nodes
-qstat -Q p100_normal_q
-
-# Check job status
-checkjob -v $jobid
-
-# Check resource usage
-jobload $jobid
-```
-
-#### Remote Editing Environment
-You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
-1. First setup your password-less ssh environment. Follow the instructions in 2.
-2. On your local machine, choose a project directory to sync your source codes.
-3. Install `Remote-ftp`. Go to Setting->Install, type RemoteFTP, Install it.
-4. Write a `.ftpconfig` file in the chosen directory as follows.
-```
-{
-    "protocol": "sftp",
-    "host": "newriver1.arc.vt.edu", // string - Hostname or IP address of the server. Default: 'localhost'
-    "port": 22, // integer - Port number of the server. Default: 22
-    "user": "jinchoi", // string - Username for authentication. Default: (none)
-    "remote": "/home/jinchoi/src/",
-    "privatekey": "/Users/jwC/.ssh/id_rsa" // string - Path to the private key file (in OpenSSH format). Default: (none)
-}
-```
-For the “User”, “remote”, “privatekey” fields, you should modify them for your own settings. You may use VPN client if you are off-campus and want to use PowerAI. If you are off-campus and want to use CVMLP clusters, you can simply use port number 2222.
-5. Connect to the server using "Packages->RemoteFTP->Connect"
-6. Enjoy!
-
 
 ## Cascades
-Since both NewRiver and Cascades use the same system, you can use/share the same conda environment. 
+Since both NewRiver and Cascades use the same system, you can use/share the same conda environment. Check [INSTALL_NewRiver.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_NewRiver.md) for installation details.
 
 ### Create conda environment 
 Here is an example of creating a conda environment. Chen uses the following commands to create an environment for FlowNet2 (pytorch 0.4.0, gcc5, cuda 9.0)
@@ -221,6 +169,27 @@ cd /home/chengao/Project/videocomp
 python train.py
 ```
 You can simply do `sbatch train.sh` to submit the job.
+
+
+#### Remote Editing Environment
+You can set up a remote editing environment using sftp connect. This example is using Atom + Remote FTP, but you can do similar things for other editors + sftp plug-ins.
+1. First setup your password-less ssh environment. Follow the instructions in 2.
+2. On your local machine, choose a project directory to sync your source codes.
+3. Install `Remote-ftp`. Go to Setting->Install, type RemoteFTP, Install it.
+4. Write a `.ftpconfig` file in the chosen directory as follows.
+```
+{
+    "protocol": "sftp",
+    "host": "newriver1.arc.vt.edu", // string - Hostname or IP address of the server. Default: 'localhost'
+    "port": 22, // integer - Port number of the server. Default: 22
+    "user": "jinchoi", // string - Username for authentication. Default: (none)
+    "remote": "/home/jinchoi/src/",
+    "privatekey": "/Users/jwC/.ssh/id_rsa" // string - Path to the private key file (in OpenSSH format). Default: (none)
+}
+```
+For the “User”, “remote”, “privatekey” fields, you should modify them for your own settings. You may use VPN client if you are off-campus and want to use PowerAI. If you are off-campus and want to use CVMLP clusters, you can simply use port number 2222.
+5. Connect to the server using "Packages->RemoteFTP->Connect"
+6. Enjoy!
 
 
 ## Huckleberry (PowerAI)
