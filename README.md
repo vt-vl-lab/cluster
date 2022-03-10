@@ -10,11 +10,9 @@ Instructions for using clusters at Virginia Tech
 - [Cascades](#cascades)
 - [Huckleberry](#huckleberry-powerai)
 - [Infer-T4](#infer-t4)
-- [VL-Lab](#vl-lab)
-- [RTX cluster](#rtx)
 
 ## Common
-- There are 4 different systems: CVMLP, ARC clusters, VL-Lab, and RTX. We only manage accounts for VL-Lab and RTX.
+- There are 2 different systems: CVMLP, ARC clusters.
 - For CVMLP, you need your ECE account. Please contact John (john.ghra@vt.edu) if you don't have one.
 - For ARC clusters (including Infer-T4), you can find information on their [website](https://www.arc.vt.edu/).
 
@@ -140,10 +138,10 @@ conda install -c menpo ffmpeg
 
 ### Interactive GPU Jobs
 ```
-salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_06
+salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_07
 ```
 
-**Valid allocations: vllab_07, vllab_08, vllab_09, vllab_10**
+**Valid allocations: vllab_07, vllab_08, vllab_09, vllab_10, badour_albahar**
 
 
 ### A sample slurm batch script using pytorch
@@ -211,52 +209,3 @@ Members of VT who have received accounts on infer have access to the infer login
 ### Install & Usage
 Please check this [document](https://github.com/vt-vl-lab/cluster/blob/master/Infer_T4_cluster.pdf) for details.
 
-## VL-Lab
-```shell
-# vllab1 (1080 Ti (11G) x 2, Ubuntu only)
-ssh -p 8125 <username>@128.173.88.229
-
-# vllab2 (Titan X (12G) x 2)
-ssh -p 8126 <username>@128.173.88.229
-
-# vllab3 (Titan X (12G) x 2)
-ssh -p 8127 <username>@128.173.88.229
-
-# vllab4 (Titan RTX (24G) x 2, Ubuntu only)
-ssh -p 8128 <username>@128.173.88.229
-
-# vllab5 (Titan RTX (24G) x 2, Ubuntu only)
-ssh -p 8129 <username>@128.173.88.229
-```
-
-**NOTE:** 
-- Please ask Yuliang to create a new user for you. And then you can set up your own anaconda environment, CUDA and CUDNN are already set up.
-- The storage of these machines are not shared.
-- Questions? Check [INSTALL_VLLAB.md](https://github.com/vt-vl-lab/cluster/blob/master/INSTALL_VLLAB.md) first.
-
-### Matlab 
-vllab2, vllab3 have Matlab under Windows, vllab2 has Matlab under Ubuntu.
-
-### Adobe Creative Cloud (vllab2, vllab3 - Windows)
-You can use products from Adobe Creative Cloud (e.g., PhotoShop, AfterEffects) on these machines.
-
-### COLMAP (vllab5 - Ubuntu)
-You should be able to use it with any account. Please check [this](https://colmap.github.io/cli.html) for more details.
-
-
-## RTX
-```shell
-# RTX-1 (RTX 2080 (11G) x 10, CentOS)
-ssh <username>@172.28.145.100
-
-# RTX-2 (RTX 2080 (11G) x 10, CentOS)
-ssh <username>@172.28.145.104
-
-# To use admin account, you cannot ssh into it, please use
-su - admin
-```
-
-**NOTE:** 
-- Please ask Yuliang to get the initial password, then you can change it with `passwd`.
-- Please create a new user and set up your own anaconda environment, CUDA and CUDNN are already set up.
-- The storage of these machines are not shared.
