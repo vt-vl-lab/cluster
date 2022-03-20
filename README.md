@@ -138,10 +138,10 @@ conda install -c menpo ffmpeg
 
 ### Interactive GPU Jobs
 ```
-salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A vllab_07
+salloc --nodes=1 --ntasks=1 --mem-per-cpu=16G -p v100_normal_q -t 2:00:00 --gres=gpu:1 -A badour_albahar
 ```
 
-**Valid allocations: vllab_07, vllab_08, vllab_09, vllab_10, badour_albahar**
+**Valid allocations: badour_albahar**
 
 
 ### A sample slurm batch script using pytorch
